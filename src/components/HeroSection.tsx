@@ -79,6 +79,22 @@ const HeroSection = () => (
           Responsable del Departamento de Tecnología e Innovación
         </p>
       </motion.div>
+
+      {/* 5. Scroll indicator */}
+      <motion.div
+        className="mt-10 flex justify-center"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.6 }}
+      >
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="w-1 h-2 rounded-full bg-accent"
+          />
+        </div>
+      </motion.div>
     </div>
   </section>
 );
