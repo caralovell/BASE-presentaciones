@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { LayoutGrid, SplitSquareVertical, Radio, MapPin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/cms-dashboard.jpg";
-import ledWall1 from "@/assets/led-wall-1.jpg";
-import ledWall2 from "@/assets/led-wall-2.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
@@ -18,29 +15,6 @@ const totemSecondary = [
 ];
 
 const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
-
-const cmsFeatures = [
-  {
-    icon: LayoutGrid,
-    title: "Control centralizado",
-    desc: "Gestiona todo el contenido de señalización digital desde un único panel.",
-  },
-  {
-    icon: SplitSquareVertical,
-    title: "Partición de pantalla",
-    desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos.",
-  },
-  {
-    icon: Radio,
-    title: "Gestión de colas vía API",
-    desc: "Integración con sistemas de turnos para actualizar información en tiempo real.",
-  },
-  {
-    icon: MapPin,
-    title: "Segmentación por zona",
-    desc: "Contenido personalizado para cada zona o espacio según su finalidad y público.",
-  },
-];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
@@ -125,89 +99,31 @@ const DigitalSignageSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* Sub-section: Gestión de Contenido */}
+      {/* Sub-section: Gestión de Contenido (compact) */}
       <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h3 className="text-2xl md:text-4xl font-bold text-foreground">Gestión de Contenido</h3>
-          <p className="text-sm md:text-base text-muted-foreground mt-3 max-w-2xl mx-auto">
-            Una plataforma todo-en-uno para programar, distribuir y monitorizar tus pantallas en tiempo real.
-          </p>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-[1fr_auto] gap-6 items-center">
+          <div>
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Gestión de Contenido</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              Una plataforma todo-en-uno para programar, distribuir y monitorizar tus pantallas en tiempo real.
+            </p>
+          </div>
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px] justify-self-center md:justify-self-end"
+          >
+            <img
+              src={cmsDashboard}
+              alt="Panel de gestión de contenido"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              width={1024}
+              height={768}
+            />
+          </motion.div>
         </div>
       </ScrollReveal>
-
-      <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-20">
-        <ScrollReveal direction="left">
-          <div className="relative group max-w-md mx-auto">
-            <div className="absolute -inset-6 bg-gradient-to-tr from-accent/30 via-accent/10 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-            <motion.div
-              className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-accent/20 blur-3xl"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            <motion.div
-              className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20 bg-card"
-              whileHover={{ y: -6 }}
-              transition={{ type: "spring", stiffness: 200, damping: 18 }}
-            >
-              <div className="flex items-center gap-1.5 px-4 py-3 bg-muted/40 border-b border-border/50">
-                <span className="w-3 h-3 rounded-full bg-red-400/70" />
-                <span className="w-3 h-3 rounded-full bg-yellow-400/70" />
-                <span className="w-3 h-3 rounded-full bg-green-400/70" />
-                <div className="ml-3 flex-1 h-5 rounded-md bg-background/50" />
-              </div>
-              <img
-                src={cmsDashboard}
-                alt="Panel de gestión de contenido"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-                width={1024}
-                height={768}
-              />
-            </motion.div>
-
-            <motion.div
-              className="absolute -bottom-4 -left-4 px-4 py-2 rounded-xl bg-accent text-accent-foreground text-xs font-bold shadow-xl flex items-center gap-2"
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
-              EN VIVO
-            </motion.div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.1} direction="right">
-          <div className="grid sm:grid-cols-2 gap-3">
-            {cmsFeatures.map((f, i) => {
-              const Icon = f.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.4 }}
-                  whileHover={{ y: -4 }}
-                  className="group relative p-5 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors duration-300 overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-500" />
-                  <div className="relative">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-3 group-hover:bg-accent group-hover:border-accent transition-colors duration-300">
-                      <Icon
-                        className="w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors duration-300"
-                        strokeWidth={1.5}
-                      />
-                    </div>
-                    <h4 className="text-sm font-bold mb-1 text-foreground">{f.title}</h4>
-                    <p className="text-xs leading-relaxed text-muted-foreground">{f.desc}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </ScrollReveal>
-      </div>
     </div>
   </section>
 );
