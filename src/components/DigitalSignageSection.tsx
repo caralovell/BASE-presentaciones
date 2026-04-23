@@ -59,8 +59,7 @@ const DigitalSignageSection = () => (
         <div className="max-w-4xl mx-auto text-center mb-10">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla, creando
-            una experiencia única. Servicio completo de Digital Signage, incluyendo la instalación de pantallas,
-            software y sistemas de gestión.
+            una experiencia única.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2.5 mt-6">
