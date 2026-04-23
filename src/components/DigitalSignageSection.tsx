@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { LayoutGrid, SplitSquareVertical, Radio, MapPin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/cms-dashboard.jpg";
-import ledWall1 from "@/assets/led-wall-1.jpg";
-import ledWall2 from "@/assets/led-wall-2.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
