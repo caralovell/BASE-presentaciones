@@ -1,22 +1,21 @@
 import { motion } from "framer-motion";
-import { MonitorPlay, Users } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsWaapiti from "@/assets/cms-waapiti.png";
 import ledWall1 from "@/assets/led-wall-1.jpg";
 import ledWall2 from "@/assets/led-wall-2.jpg";
 import digitalSignageKiosk from "@/assets/digital-signage-kiosk.jpg";
 
-const features = [
-  {
-    icon: MonitorPlay,
-    title: "Gestor de contenido",
-    desc: "Plataforma intuitiva para gestionar y programar contenidos en todas tus pantallas.",
-  },
-  {
-    icon: Users,
-    title: "Gestión de colas",
-    desc: "Sistema inteligente de turnos que mejora la experiencia de espera del cliente.",
-  },
+const bubbles = [
+  "Tótems interactivos",
+  "Kioskos táctiles",
+  "Gestión de colas",
+  "Pantallas verticales",
+  "Señalización dinámica",
+  "Múltiples formatos",
+  "Contenido en tiempo real",
+  "Diseño personalizado",
+  "Wayfinding digital",
+  "Alta luminosidad",
 ];
 
 const cmsFeatures = [
@@ -48,21 +47,25 @@ const DigitalSignageSection = () => (
               pantallas, software y sistemas de gestión.
             </p>
 
-            <div className="flex flex-col gap-4">
-              {features.map((feature) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={feature.title} className="flex items-start gap-3 py-3 px-4 rounded-xl">
-                    <div className="shrink-0 w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">{feature.title}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="flex flex-wrap gap-2.5">
+              {bubbles.map((label, i) => (
+                <motion.span
+                  key={label}
+                  initial={{ opacity: 0, scale: 0.6, y: 10 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    delay: i * 0.06,
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 14,
+                  }}
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-sm font-medium text-foreground hover:bg-accent/20 hover:border-accent/60 transition-colors cursor-default shadow-sm"
+                >
+                  {label}
+                </motion.span>
+              ))}
             </div>
           </div>
 
