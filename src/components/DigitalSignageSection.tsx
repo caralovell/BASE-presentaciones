@@ -201,43 +201,6 @@ const DigitalSignageSection = () => (
           </div>
         </ScrollReveal>
       </div>
-
-      {/* Sub-section: Pantallas LED */}
-      <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground">Pantallas LED</h3>
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.1}>
-        <div className="max-w-4xl mx-auto">
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
-            Pantallas LED de alta luminosidad y resolución, ideales tanto para grandes espacios
-            interiores como para fachadas exteriores. Configurables en cualquier formato y
-            tamaño, ofrecen un impacto visual incomparable con un consumo eficiente y un
-            mantenimiento mínimo.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            <motion.img
-              src={ledWall1}
-              alt="Pantalla LED interior"
-              className="w-full rounded-2xl shadow-xl border-2 border-accent/20 object-cover aspect-[4/3]"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              loading="lazy"
-            />
-            <motion.img
-              src={ledWall2}
-              alt="Pantalla LED exterior"
-              className="w-full rounded-2xl shadow-xl border-2 border-accent/20 object-cover aspect-[4/3]"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </ScrollReveal>
     </div>
   </section>
 );
