@@ -1,113 +1,232 @@
 import { motion } from "framer-motion";
+import { Eye, Ear, Globe2, MapPin, Sparkles, Heart } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import navilensLogo from "@/assets/navilens-logo.png";
 import navilensCode from "@/assets/navilens-code.png";
+import navilensNyc from "@/assets/navilens-nyc.jpg";
 import visualfyLogo from "@/assets/visualfy-logo.png";
+import visualfyDevice from "@/assets/visualfy-device.jpg";
+
+const cities = ["Nueva York", "Barcelona", "Madrid", "Tokio", "París", "Londres", "Murcia", "Sídney"];
+
+const navilensFeatures = [
+  { icon: Eye, title: "Lectura sin enfocar", desc: "Detecta códigos a 12 m sin necesidad de apuntar con precisión." },
+  { icon: Sparkles, title: "Información por voz", desc: "Indicaciones contextuales en tiempo real en el idioma del usuario." },
+  { icon: MapPin, title: "Wayfinding inteligente", desc: "Guía paso a paso por el hospital, desde la entrada hasta la consulta." },
+];
+
+const visualfyFeatures = [
+  { icon: Ear, title: "Detección de sonidos", desc: "Alertas visuales y vibratorias de sirenas, llamadas, timbres y más." },
+  { icon: Heart, title: "Impacto social", desc: "Reconocida como una de las mejores empresas para el mundo." },
+];
 
 const NavilensSection = () => (
-  <section id="accesibilidad" className="py-12 md:py-16 bg-surface relative overflow-hidden">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.04]" style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }} />
+  <section id="accesibilidad" className="py-12 md:py-20 bg-surface relative overflow-hidden">
+    {/* Background decoration */}
+    <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-[0.06]" style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }} />
+    <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-[0.05]" style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }} />
 
     <div className="container mx-auto px-4 relative z-10">
+      {/* Header */}
       <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-6">
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">03</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-            Navegación Accesible
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-4">
+            Accesibilidad
           </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            Un hospital verdaderamente inclusivo no deja a nadie atrás. Integramos las tecnologías
+            líderes mundiales para garantizar que <strong className="text-foreground">cualquier persona</strong>,
+            independientemente de sus capacidades, pueda navegar, comunicarse y sentirse segura.
+          </p>
         </div>
       </ScrollReveal>
 
-      {/* Navilens block */}
-      <div className="flex flex-col lg:flex-row items-center gap-10 mb-20">
-        <ScrollReveal className="flex-1 flex justify-center" direction="left">
-          <div className="w-full max-w-xs flex flex-col items-center gap-4">
-            <img src={navilensLogo} alt="navilens logo" className="max-w-[140px] w-full object-contain" />
+      {/* Highlight banner */}
+      <ScrollReveal delay={0.1}>
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-16">
+          <span className="text-xs uppercase tracking-wider text-muted-foreground mr-2">Tecnología desplegada en</span>
+          {cities.map((city, i) => (
+            <motion.span
+              key={city}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-xs font-semibold text-foreground"
+            >
+              <Globe2 className="w-3 h-3 text-accent" />
+              {city}
+            </motion.span>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      {/* === NAVILENS BLOCK === */}
+      <ScrollReveal>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center">
+            <Eye className="w-6 h-6 text-accent" strokeWidth={1.5} />
+          </div>
+          <div>
+            <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">Para personas con discapacidad visual</span>
+            <img src={navilensLogo} alt="Navilens" className="h-6 object-contain mt-1" />
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+        <ScrollReveal direction="left">
+          <div className="relative group">
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-tr from-accent/30 to-transparent rounded-3xl blur-2xl opacity-50"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            >
+              <img
+                src={navilensNyc}
+                alt="Navilens en el metro de Nueva York"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                loading="lazy"
+                width={1024}
+                height={768}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold mb-1">
+                  📍 MTA · Nueva York
+                </span>
+                <p className="text-sm text-foreground font-semibold">
+                  Implantado en todo el metro de NYC
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Floating navilens code */}
             <motion.img
               src={navilensCode}
-              alt="navilens code"
-              className="w-full max-w-[260px] rounded-2xl shadow-2xl border-2 border-accent/20 object-contain"
-              style={{ aspectRatio: "1/1" }}
-              whileHover={{ scale: 1.03 }}
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                scale: { duration: 0.3 },
-              }}
+              alt="Código Navilens"
+              className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl shadow-2xl border-2 border-accent/40 object-contain bg-background p-2"
+              animate={{ rotate: [0, 5, 0, -5, 0], y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
         </ScrollReveal>
 
-        <div className="flex-1 max-w-xl">
-          <ScrollReveal delay={0.1}>
-            <div className="space-y-4">
-              <div className="dark-card p-5">
-                <h3 className="text-base font-bold mb-1">¿Qué es Navilens y cómo funciona?</h3>
-                <p className="text-sm leading-relaxed">
-                  Navilens utiliza códigos geométricos de alto contraste y colores vivos,
-                  legibles a hasta 12 metros sin necesidad de enfocar la cámara. El usuario
-                  abre la app, apunta en la dirección general del código y recibe información
-                  contextual por voz en tiempo real — una revolución para personas con
-                  discapacidad visual.
-                </p>
-              </div>
-
-              <div className="dark-card p-5">
-                <h3 className="text-base font-bold mb-1">¿Por qué es imprescindible?</h3>
-                <p className="text-sm leading-relaxed">
-                  Los hospitales tienen la responsabilidad de ser accesibles para todos.
-                  Navilens transforma entornos complejos en espacios navegables para personas
-                  con discapacidad visual — desde la entrada principal hasta cada
-                  departamento, sala de espera y consulta.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+        <ScrollReveal direction="right" delay={0.1}>
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Códigos geométricos de alto contraste, legibles a hasta <strong className="text-foreground">12 metros</strong> sin
+            necesidad de enfocar la cámara. El usuario apunta con su móvil y recibe información por voz al instante —
+            una revolución mundial para la navegación accesible.
+          </p>
+          <div className="space-y-3">
+            {navilensFeatures.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground mb-0.5">{f.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
       </div>
 
-      {/* Visualfy block — imagen a la derecha, texto a la izquierda */}
-      <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-        <ScrollReveal className="flex-1 flex justify-center" direction="right">
-          <motion.img
-            src={visualfyLogo}
-            alt="Visualfy logo"
-            className="w-full max-w-[260px] object-contain"
-            whileHover={{ scale: 1.03 }}
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              scale: { duration: 0.3 },
-            }}
-          />
+      {/* === VISUALFY BLOCK === */}
+      <ScrollReveal>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center">
+            <Ear className="w-6 h-6 text-accent" strokeWidth={1.5} />
+          </div>
+          <div>
+            <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">Para personas sordas o con discapacidad auditiva</span>
+            <img src={visualfyLogo} alt="Visualfy" className="h-6 object-contain mt-1" />
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <ScrollReveal direction="left">
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Empresa española pionera en accesibilidad auditiva. Sus dispositivos transforman los sonidos del entorno
+            en <strong className="text-foreground">alertas visuales y vibratorias</strong>, devolviendo autonomía y
+            tranquilidad a las personas sordas en cualquier espacio.
+          </p>
+          <div className="space-y-3">
+            {visualfyFeatures.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-foreground mb-0.5">{f.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </ScrollReveal>
 
-        <div className="flex-1 max-w-xl">
-          <ScrollReveal delay={0.1} direction="left">
-            <div className="space-y-4">
-              <div className="dark-card p-5">
-                <h3 className="text-base font-bold mb-1">Una empresa comprometida</h3>
-                <p className="text-sm leading-relaxed">
-                  Empresa española dedicada a crear tecnología para la accesibilidad
-                  auditiva. Creemos en otra forma de hacer empresa — la que genera un
-                  impacto positivo en su entorno y mide el éxito con variables sociales
-                  además de económicas. Hemos sido reconocidos como una de las mejores
-                  empresas para el mundo por nuestro impacto social.
+        <ScrollReveal direction="right" delay={0.1}>
+          <div className="relative group">
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-bl from-accent/30 to-transparent rounded-3xl blur-2xl opacity-50"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20"
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+            >
+              <img
+                src={visualfyDevice}
+                alt="Dispositivo Visualfy"
+                className="w-full h-auto object-cover aspect-[4/3]"
+                loading="lazy"
+                width={1024}
+                height={768}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold mb-1">
+                  ✦ Tecnología española
+                </span>
+                <p className="text-sm text-foreground font-semibold">
+                  Sonidos convertidos en luz y vibración
                 </p>
               </div>
-
-              <div className="dark-card p-5">
-                <h3 className="text-base font-bold mb-1">Tecnología que empodera</h3>
-                <p className="text-sm leading-relaxed">
-                  Nuestros productos empoderan a las personas sordas y a la sociedad de la
-                  que forman parte, apoyando con tecnología una integración real. Nuestro
-                  equipo está formado por personas sordas y oyentes, porque solo juntos
-                  podemos crear el mundo que imaginamos.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+            </motion.div>
+          </div>
+        </ScrollReveal>
       </div>
     </div>
   </section>
