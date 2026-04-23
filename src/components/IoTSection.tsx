@@ -66,7 +66,7 @@ const IoTSection = () => (
 
         {/* Right: image */}
         <ScrollReveal direction="right" delay={0.1}>
-          <div className="relative max-w-sm mx-auto">
+          <div className="relative max-w-xs mx-auto">
             <motion.div
               className="absolute -inset-6 rounded-[2rem] blur-3xl opacity-40"
               style={{ background: "radial-gradient(circle, hsl(var(--accent) / 0.3), transparent 70%)" }}
