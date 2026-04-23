@@ -11,8 +11,8 @@ const WayfindingSection = () => (
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">04</span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Digital Wayfinding</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            Navegación interior interactiva que guía a pacientes y visitantes a través de los espacios
-            del hospital con zonas codificadas por colores y orientación en tiempo real.
+            Navegación interior interactiva que guía a usuarios y visitantes a través de cualquier
+            espacio con zonas codificadas por colores y orientación en tiempo real.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
             Facilita el movimiento por espacios complejos, reduciendo estrés y mejorando la experiencia
@@ -29,7 +29,7 @@ const WayfindingSection = () => (
         <ScrollReveal className="flex-1 flex justify-center" delay={0.15} direction="right">
           <motion.img
             src={wayfindingImg}
-            alt="hospital navigation map mobile"
+            alt="indoor navigation map mobile"
             className="w-full max-w-sm rounded-2xl shadow-2xl border-2 border-accent/20 object-cover"
             style={{ aspectRatio: "4/3" }}
             whileHover={{ scale: 1.03 }}

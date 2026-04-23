@@ -12,7 +12,7 @@ const cities = ["Nueva York", "Barcelona", "Madrid", "Tokio", "París", "Londres
 const navilensFeatures = [
   { icon: Eye, title: "Lectura sin enfocar", desc: "Detecta códigos a 12 m sin necesidad de apuntar con precisión." },
   { icon: Sparkles, title: "Información por voz", desc: "Indicaciones contextuales en tiempo real en el idioma del usuario." },
-  { icon: MapPin, title: "Wayfinding inteligente", desc: "Guía paso a paso por el hospital, desde la entrada hasta la consulta." },
+  { icon: MapPin, title: "Wayfinding inteligente", desc: "Guía paso a paso por cualquier recinto, desde la entrada hasta el destino final." },
 ];
 
 const visualfyFeatures = [
@@ -35,7 +35,7 @@ const NavilensSection = () => (
             Accesibilidad
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Un hospital verdaderamente inclusivo no deja a nadie atrás. Integramos las tecnologías
+            Un espacio verdaderamente inclusivo no deja a nadie atrás. Integramos las tecnologías
             líderes mundiales para garantizar que <strong className="text-foreground">cualquier persona</strong>,
             independientemente de sus capacidades, pueda navegar, comunicarse y sentirse segura.
           </p>

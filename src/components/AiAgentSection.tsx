@@ -8,7 +8,7 @@ const blocks = [
   {
     title: "Agente IA",
     img: aiAgent,
-    desc: "Un asistente conversacional inteligente que automatiza procesos, atiende consultas y guía a pacientes y personal en tiempo real, integrándose con los sistemas hospitalarios existentes.",
+    desc: "Un asistente conversacional inteligente que automatiza procesos, atiende consultas y guía a usuarios y personal en tiempo real, integrándose con los sistemas existentes de tu organización.",
   },
   {
     title: "Avatar IA",
@@ -18,7 +18,7 @@ const blocks = [
   {
     title: "IA Adaptable",
     img: aiAdaptive,
-    desc: "Un asistente personalizable que aprende de cada entorno, adapta su tono, sus respuestas y sus capacidades a las necesidades específicas de cada departamento, sala o caso de uso.",
+    desc: "Un asistente personalizable que aprende de cada entorno, adapta su tono, sus respuestas y sus capacidades a las necesidades específicas de cada área, espacio o caso de uso.",
   },
 ];
 

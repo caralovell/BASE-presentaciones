@@ -17,7 +17,7 @@ const cmsFeatures = [
   { icon: LayoutGrid, title: "Control centralizado", desc: "Gestiona todo el contenido de señalización digital desde un único panel." },
   { icon: SplitSquareVertical, title: "Partición de pantalla", desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos." },
   { icon: Radio, title: "Gestión de colas vía API", desc: "Integración con sistemas de turnos para actualizar información en tiempo real." },
-  { icon: MapPin, title: "Segmentación por sala", desc: "Contenido personalizado para cada sala de espera según departamento y especialidad." },
+  { icon: MapPin, title: "Segmentación por zona", desc: "Contenido personalizado para cada zona o espacio según su finalidad y público." },
 ];
 
 const DigitalSignageSection = () => (
