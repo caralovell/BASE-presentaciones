@@ -55,6 +55,15 @@ const HeroSection = () => (
         <LogopostLogo className="h-12 md:h-14 w-auto" />
       </motion.div>
 
+      {/* 3.5 Tagline */}
+      <motion.div className="flex items-center gap-4 w-full max-w-md" {...fadeUp(0.5)}>
+        <span className="h-px flex-1 bg-primary/60" />
+        <span className="text-sm uppercase tracking-[0.3em] text-primary font-medium whitespace-nowrap">
+          Línea digital
+        </span>
+        <span className="h-px flex-1 bg-primary/60" />
+      </motion.div>
+
       {/* 4. Proposal info */}
       <motion.div className="flex flex-col items-center gap-1.5 mt-2" {...fadeUp(0.6)}>
         <p className="text-sm text-muted-foreground">
