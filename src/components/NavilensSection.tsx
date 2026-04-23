@@ -66,7 +66,7 @@ const NavilensSection = () => (
           <div className="relative grid grid-cols-[1fr_auto] gap-4 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={visualfyLogo} alt="Visualfy" className="h-10 object-contain" />
+                <img src={visualfyLogo} alt="Visualfy" className="h-12 object-contain" />
                 <span className="text-xs uppercase tracking-[0.15em] text-accent font-bold">Discapacidad auditiva</span>
               </div>
 
