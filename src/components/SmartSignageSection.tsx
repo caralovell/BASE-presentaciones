@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Zap, MapPin, CheckCircle2 } from "lucide-react";
+import { Smartphone, MapPin, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import iconQr from "@/assets/icon-qr.png";
 import iconNfc from "@/assets/icon-nfc.png";
@@ -49,11 +49,6 @@ const SmartSignageSection = () => (
               className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
             />
 
-            {/* Number watermark */}
-            <span className="absolute top-4 right-6 text-7xl font-black text-accent/5 group-hover:text-accent/10 transition-colors duration-500 select-none">
-              01
-            </span>
-
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -93,28 +88,20 @@ const SmartSignageSection = () => (
               </div>
             </div>
 
-            {/* Bottom accent bar */}
-            <motion.div
-              className="absolute bottom-0 left-0 h-1 bg-accent"
-              initial={{ width: "0%" }}
-              whileInView={{ width: "100%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-            />
           </motion.div>
         </ScrollReveal>
 
-        {/* NFC Card — featured/highlighted */}
+        {/* NFC Card */}
         <ScrollReveal direction="right" delay={0.1}>
           <motion.div
             whileHover={{ y: -8 }}
             transition={{ type: "spring", stiffness: 200, damping: 18 }}
-            className="group relative h-full rounded-3xl bg-gradient-to-br from-accent/20 via-card to-card border border-accent/30 p-8 overflow-hidden"
+            className="group relative h-full rounded-3xl bg-card border border-border hover:border-accent/50 p-8 overflow-hidden transition-colors duration-500"
           >
-            {/* Featured badge */}
-            <span className="absolute top-5 right-5 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-wider">
-              <Zap className="w-3 h-3" /> Destacado
-            </span>
+            {/* Glow */}
+            <motion.div
+              className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+            />
 
             {/* Animated rings */}
             <motion.div
@@ -130,7 +117,7 @@ const SmartSignageSection = () => (
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-accent/20 border border-accent/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <img src={iconNfc} alt="NFC" className="w-8 h-8 object-contain" />
                 </div>
                 <div>
