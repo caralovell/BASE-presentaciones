@@ -4,6 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 import cmsWaapiti from "@/assets/cms-waapiti.png";
 import ledWall1 from "@/assets/led-wall-1.jpg";
 import ledWall2 from "@/assets/led-wall-2.jpg";
+import digitalSignageKiosk from "@/assets/digital-signage-kiosk.jpg";
 
 const features = [
   {
@@ -71,10 +72,12 @@ const DigitalSignageSection = () => (
             transition={{ duration: 0.3 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&h=600&fit=crop"
-              alt="Digital Signage"
+              src={digitalSignageKiosk}
+              alt="Tótem digital interactivo de señalización"
               className="w-full h-full object-cover"
               loading="lazy"
+              width={768}
+              height={1024}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
           </motion.div>
