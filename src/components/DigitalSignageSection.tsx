@@ -109,8 +109,7 @@ const DigitalSignageSection = () => (
               aeropuertos o centros comerciales
             </p>
           </div>
-          // DESPUÉS
-          <div className="flex gap-3 justify-self-center md:justify-self-end">
+          <div className="flex gap-3">
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
