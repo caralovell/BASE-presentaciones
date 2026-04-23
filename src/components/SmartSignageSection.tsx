@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Zap, MapPin, CheckCircle2 } from "lucide-react";
+import { Smartphone, MapPin, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import iconQr from "@/assets/icon-qr.png";
 import iconNfc from "@/assets/icon-nfc.png";
@@ -117,7 +117,7 @@ const SmartSignageSection = () => (
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-accent/20 border border-accent/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <img src={iconNfc} alt="NFC" className="w-8 h-8 object-contain" />
                 </div>
                 <div>
