@@ -24,25 +24,27 @@ const NavilensSection = () => (
         >
           <motion.div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-          <div className="relative">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Eye className="w-5 h-5 text-accent" strokeWidth={2.2} />
+          <div className="relative grid grid-cols-[1fr_auto] gap-4 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Eye className="w-5 h-5 text-accent" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                    Discapacidad visual
+                  </span>
+                  <img src={navilensLogo} alt="Navilens" className="h-7 object-contain mt-0.5" />
+                </div>
               </div>
-              <div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
-                  Discapacidad visual
-                </span>
-                <img src={navilensLogo} alt="Navilens" className="h-7 object-contain mt-0.5" />
-              </div>
+
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                Códigos geométricos legibles a hasta <strong className="text-foreground">12 metros</strong> sin
+                necesidad de enfocar la cámara. Información por voz al instante.
+              </p>
             </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4">
-              Códigos geométricos legibles a hasta <strong className="text-foreground">12 metros</strong> sin necesidad
-              de enfocar la cámara. Información por voz al instante.
-            </p>
-
-            <div className="relative flex justify-center py-2">
+            <div className="relative flex justify-center shrink-0">
               <motion.div
                 className="absolute inset-0 bg-gradient-radial from-accent/20 to-transparent blur-2xl"
                 animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -51,7 +53,7 @@ const NavilensSection = () => (
               <motion.img
                 src={navilensCode}
                 alt="Código Navilens"
-                className="relative w-full max-w-[160px] rounded-2xl shadow-xl object-contain bg-background p-2"
+                className="relative w-full max-w-[110px] rounded-2xl shadow-xl object-contain bg-background p-2"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 animate={{ y: [0, -6, 0] }}
                 transition={{
