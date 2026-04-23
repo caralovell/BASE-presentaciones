@@ -9,9 +9,7 @@ const FooterSection = () => (
       <div className="flex items-center gap-4">
         <LogopostLogo className="h-7 w-auto" />
       </div>
-      <p className="text-muted-foreground text-xs">
-        © 2025 Logopost. Todos los derechos reservados. logopost.es
-      </p>
+      <p className="text-muted-foreground text-xs">© 2026 Logopost. Todos los derechos reservados. logopost.es</p>
     </div>
   </footer>
 );
