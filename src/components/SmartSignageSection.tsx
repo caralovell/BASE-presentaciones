@@ -50,24 +50,26 @@ const SmartSignageSection = () => (
               className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
             />
 
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <img src={iconQr} alt="QR" className="w-8 h-8 object-contain" />
+            <div className="relative grid grid-cols-[1fr_auto] gap-5 items-center">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <img src={iconQr} alt="QR" className="w-8 h-8 object-contain" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Acceso rápido</span>
+                    <h3 className="text-2xl font-bold text-foreground">Códigos QR</h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Acceso rápido</span>
-                  <h3 className="text-2xl font-bold text-foreground">Códigos QR</h3>
-                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Información instantánea al alcance del usuario: horarios, ubicaciones,
+                  servicios y más. Solo necesitan su móvil.
+                </p>
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Información instantánea al alcance del usuario: horarios, ubicaciones,
-                servicios y más. Solo necesitan su móvil.
-              </p>
-
-              {/* QR Image with phone mockup feel */}
-              <div className="relative flex justify-center py-4">
+              {/* QR Image on the right */}
+              <div className="relative flex justify-center shrink-0">
                 <motion.div
                   className="absolute inset-0 bg-gradient-radial from-accent/20 to-transparent blur-2xl"
                   animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -76,7 +78,7 @@ const SmartSignageSection = () => (
                 <motion.img
                   src={qrAscires}
                   alt="qr signage"
-                  className="relative w-full max-w-[220px] rounded-2xl shadow-xl object-contain"
+                  className="relative w-full max-w-[140px] rounded-2xl shadow-xl object-contain"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   animate={{ y: [0, -8, 0] }}
                   transition={{
