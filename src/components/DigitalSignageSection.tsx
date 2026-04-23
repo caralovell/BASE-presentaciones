@@ -85,9 +85,6 @@ const DigitalSignageSection = () => (
       {/* Sub-section: Gestión de Contenido */}
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-3">
-            CMS
-          </span>
           <h3 className="text-2xl md:text-4xl font-bold text-foreground">Gestión de Contenido</h3>
           <p className="text-sm md:text-base text-muted-foreground mt-3 max-w-2xl mx-auto">
             Una plataforma todo-en-uno para programar, distribuir y monitorizar tus pantallas en tiempo real.
@@ -95,9 +92,9 @@ const DigitalSignageSection = () => (
         </div>
       </ScrollReveal>
 
-      <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-14 items-center mb-20">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-20">
         <ScrollReveal direction="left">
-          <div className="relative group">
+          <div className="relative group max-w-md mx-auto">
             <div className="absolute -inset-6 bg-gradient-to-tr from-accent/30 via-accent/10 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
             <motion.div
               className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-accent/20 blur-3xl"
