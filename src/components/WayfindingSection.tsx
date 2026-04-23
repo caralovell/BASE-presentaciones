@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Route, Navigation, Layers, Smartphone, Compass } from "lucide-react";
+import { Route, Layers, Smartphone, Compass } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import { Button } from "@/components/ui/button";
 import wayfindingImg from "@/assets/wayfinding.png";
@@ -63,12 +63,14 @@ const WayfindingSection = () => (
             })}
           </div>
 
-          <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
-            <Button variant="cta" size="lg" className="text-base px-10 py-6 group">
-              Ver mapa interactivo
-              <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
-            </Button>
-          </a>
+          <div className="flex justify-center lg:justify-start">
+            <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
+              <Button variant="cta" size="lg" className="text-base px-10 py-6 group">
+                Ver mapa interactivo
+                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2">→</span>
+              </Button>
+            </a>
+          </div>
         </ScrollReveal>
 
         {/* Right: Mockup with floating elements */}
@@ -97,46 +99,6 @@ const WayfindingSection = () => (
               />
             </motion.div>
 
-            {/* Floating pin: destination */}
-            <motion.div
-              className="absolute -top-4 right-6 md:right-12 flex items-center gap-2 px-4 py-2 rounded-2xl bg-card border border-accent/40 shadow-2xl backdrop-blur"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, type: "spring" }}
-            >
-              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center">
-                <MapPin className="w-3.5 h-3.5 text-accent-foreground" strokeWidth={2.5} />
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Destino</p>
-                <p className="text-xs font-bold text-foreground leading-tight">Sala 204 · Planta 2</p>
-              </div>
-            </motion.div>
-
-            {/* Floating pin: ETA */}
-            <motion.div
-              className="absolute -bottom-4 left-4 md:left-10 flex items-center gap-2 px-4 py-2 rounded-2xl bg-card border border-accent/40 shadow-2xl backdrop-blur"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, type: "spring" }}
-            >
-              <div className="w-7 h-7 rounded-full bg-accent/15 border border-accent/40 flex items-center justify-center">
-                <Navigation className="w-3.5 h-3.5 text-accent" strokeWidth={2.5} />
-              </div>
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Tiempo</p>
-                <p className="text-xs font-bold text-foreground leading-tight">2 min · 85 m</p>
-              </div>
-            </motion.div>
-
-            {/* Pulse dot */}
-            <motion.div
-              className="absolute top-1/2 left-1/3 w-4 h-4 rounded-full bg-accent shadow-[0_0_20px_hsl(var(--accent))]"
-              animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
           </div>
         </ScrollReveal>
       </div>
