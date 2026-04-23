@@ -26,11 +26,9 @@ const ImmersiveSection = () => (
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
-            07 · Plus
+            07
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-3">
-            Experiencia Inmersiva
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-3">Experiencia Inmersiva</h2>
           <p className="text-sm md:text-base text-muted-foreground">
             Tecnologías complementarias que elevan la experiencia sensorial del espacio.
           </p>
