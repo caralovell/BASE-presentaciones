@@ -6,7 +6,6 @@ import {
   Headphones,
   Bell,
   Scale,
-  Activity,
   Thermometer,
   Droplets,
   Zap,
@@ -14,6 +13,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import iotTotem from "@/assets/iot-totem-dashboard.jpg";
 
 const features = [
   { icon: LayoutDashboard, title: "Dashboards", desc: "Paneles personalizados con métricas clave en una sola vista." },
