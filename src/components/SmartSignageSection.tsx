@@ -132,8 +132,8 @@ const SmartSignageSection = () => (
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                Un simple toque del teléfono y el usuario accede a información personalizada. Sin barreras, sin
-                fricciones.
+                La solución integral que fusiona lo físico y digital para ofrecer experiencias phygital más inteligentes
+                y conectadas
               </p>
 
               {/* NFC image */}
