@@ -9,13 +9,7 @@ const bubbles = [
   "Tótems interactivos",
   "Kioskos táctiles",
   "Gestión de colas",
-  "Pantallas verticales",
-  "Señalización dinámica",
-  "Múltiples formatos",
-  "Contenido en tiempo real",
-  "Diseño personalizado",
   "Wayfinding digital",
-  "Alta luminosidad",
 ];
 
 const cmsFeatures = [
