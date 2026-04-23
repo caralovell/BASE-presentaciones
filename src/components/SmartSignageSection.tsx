@@ -62,10 +62,30 @@ const SmartSignageSection = () => (
                   </div>
                 </div>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   Información instantánea al alcance del usuario: horarios, ubicaciones,
                   servicios y más. Solo necesitan su móvil.
                 </p>
+
+                <ul className="space-y-2.5">
+                  {[
+                    "Acceso sin instalación de apps",
+                    "Contenido actualizable en tiempo real",
+                    "Compatible con cualquier smartphone",
+                  ].map((t, i) => (
+                    <motion.li
+                      key={t}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + i * 0.08 }}
+                      className="flex items-start gap-2.5 text-sm text-foreground/90"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2.5} />
+                      <span>{t}</span>
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
 
               {/* QR Image on the right */}
@@ -78,7 +98,7 @@ const SmartSignageSection = () => (
                 <motion.img
                   src={qrAscires}
                   alt="qr signage"
-                  className="relative w-full max-w-[140px] rounded-2xl shadow-xl object-contain"
+                  className="relative w-full max-w-[180px] rounded-2xl shadow-xl object-contain"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   animate={{ y: [0, -8, 0] }}
                   transition={{
