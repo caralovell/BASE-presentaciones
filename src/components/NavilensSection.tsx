@@ -96,23 +96,11 @@ const NavilensSection = () => (
               </div>
             </div>
 
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4">
+            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
               Transforma los sonidos del entorno en{" "}
               <strong className="text-foreground">alertas visuales y vibratorias</strong>, devolviendo autonomía a las
               personas sordas.
             </p>
-
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20">
-              <motion.img
-                src={visualfyDevice}
-                alt="Dispositivo Visualfy"
-                className="w-full h-36 object-cover"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent" />
-            </div>
           </div>
         </motion.div>
       </ScrollReveal>
