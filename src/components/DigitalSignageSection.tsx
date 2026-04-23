@@ -98,10 +98,6 @@ const DigitalSignageSection = () => (
               height={1280}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/90 backdrop-blur text-accent-foreground text-xs font-bold shadow-lg">
-               
-            </div>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-3 lg:gap-4">
