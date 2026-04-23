@@ -97,9 +97,9 @@ const WayfindingSection = () => (
 
           <div className="flex justify-center">
             <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
-              <button className="group relative bg-gradient-to-r from-primary to-[hsl(190,80%,45%)] text-white px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_hsla(177,100%,35%,0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
+              <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
                 <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">Ver mapa interactivo</span>
-                <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-10 place-items-center transition-all duration-500 bg-white/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-10 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
                   <ArrowRight size={16} strokeWidth={2} />
                 </span>
               </button>
