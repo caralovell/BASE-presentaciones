@@ -10,8 +10,7 @@ const NavilensSection = () => (
   <div className="mt-12 md:mt-16">
     <ScrollReveal>
       <div className="text-center max-w-2xl mx-auto mb-6">
-        <span className="inline-block text-[10px] uppercase tracking-[0.3em] text-accent font-primary font-bold mb-2">Accesibilidad</span>
-        <h3 className="text-xl md:text-2xl font-bold text-foreground">Un espacio para todos</h3>
+        <h3 className="text-xl md:text-2xl font-bold text-foreground">Accesibilidad</h3>
       </div>
     </ScrollReveal>
 
@@ -31,7 +30,9 @@ const NavilensSection = () => (
                 <Eye className="w-5 h-5 text-accent" strokeWidth={2.2} />
               </div>
               <div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Discapacidad visual</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  Discapacidad visual
+                </span>
                 <img src={navilensLogo} alt="Navilens" className="h-7 object-contain mt-0.5" />
               </div>
             </div>
@@ -86,14 +87,17 @@ const NavilensSection = () => (
                 <Ear className="w-5 h-5 text-accent" strokeWidth={2.2} />
               </div>
               <div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Discapacidad auditiva</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                  Discapacidad auditiva
+                </span>
                 <img src={visualfyLogo} alt="Visualfy" className="h-7 object-contain mt-0.5" />
               </div>
             </div>
 
             <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4">
-              Transforma los sonidos del entorno en <strong className="text-foreground">alertas visuales y vibratorias</strong>,
-              devolviendo autonomía a las personas sordas.
+              Transforma los sonidos del entorno en{" "}
+              <strong className="text-foreground">alertas visuales y vibratorias</strong>, devolviendo autonomía a las
+              personas sordas.
             </p>
 
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20">
