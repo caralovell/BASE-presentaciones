@@ -9,7 +9,7 @@ import hologram from "@/assets/immersive-hologram.jpg";
 const items = [
   { title: "Robótica", icon: Bot, img: robotics, span: "md:col-span-2 md:row-span-2" },
   { title: "Realidad Virtual", icon: Glasses, img: vr, span: "md:col-span-2" },
-  { title: "Aromática", icon: Flower2, img: aroma, span: "md:col-span-1" },
+  { title: "Mkt Sensorial", icon: Flower2, img: aroma, span: "md:col-span-1" },
   { title: "Hologramas", icon: Sparkles, img: hologram, span: "md:col-span-1" },
 ];
 
@@ -21,7 +21,6 @@ const ImmersiveSection = () => (
       animate={{ scale: [1, 1.2, 1] }}
       transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
     />
-
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -34,7 +33,6 @@ const ImmersiveSection = () => (
           </p>
         </div>
       </ScrollReveal>
-
       <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[180px] gap-3 md:gap-4 max-w-6xl mx-auto">
         {items.map((it, i) => {
           const Icon = it.icon;
@@ -55,9 +53,7 @@ const ImmersiveSection = () => (
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-                <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
-
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-accent/10 transition-colors duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 flex items-center gap-3">
                   <motion.div
                     className="w-9 h-9 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/40 flex items-center justify-center shrink-0"
@@ -66,7 +62,7 @@ const ImmersiveSection = () => (
                   >
                     <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
                   </motion.div>
-                  <h3 className="text-base md:text-lg font-bold text-foreground">{it.title}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-white">{it.title}</h3>
                 </div>
               </motion.div>
             </ScrollReveal>
