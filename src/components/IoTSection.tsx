@@ -91,13 +91,7 @@ const IoTSection = () => (
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, type: "spring" }}
               >
-                <motion.div
-                  className="w-1.5 h-1.5 rounded-full bg-accent"
-                  animate={{ opacity: [1, 0.3, 1] }}
-                  transition={{ duration: 1.6, repeat: Infinity }}
-                />
-                <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Live</span>
-              </motion.div>
+                
             </motion.div>
           </div>
         </ScrollReveal>
