@@ -57,11 +57,11 @@ const HeroSection = () => (
 
       {/* 3.5 Tagline */}
       <motion.div className="flex items-center gap-4 w-full max-w-md" {...fadeUp(0.5)}>
-        <span className="h-px flex-1 bg-primary/60" />
-        <span className="text-sm uppercase tracking-[0.3em] text-primary font-medium whitespace-nowrap">
+        <span className="h-px flex-1 bg-accent/60" />
+        <span className="text-sm uppercase tracking-[0.3em] text-accent font-medium whitespace-nowrap">
           Línea digital
         </span>
-        <span className="h-px flex-1 bg-primary/60" />
+        <span className="h-px flex-1 bg-accent/60" />
       </motion.div>
 
       {/* 4. Proposal info */}
