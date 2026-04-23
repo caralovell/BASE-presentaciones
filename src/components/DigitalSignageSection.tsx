@@ -1,22 +1,21 @@
 import { motion } from "framer-motion";
-import { MonitorPlay, Users } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsWaapiti from "@/assets/cms-waapiti.png";
 import ledWall1 from "@/assets/led-wall-1.jpg";
 import ledWall2 from "@/assets/led-wall-2.jpg";
 import digitalSignageKiosk from "@/assets/digital-signage-kiosk.jpg";
 
-const features = [
-  {
-    icon: MonitorPlay,
-    title: "Gestor de contenido",
-    desc: "Plataforma intuitiva para gestionar y programar contenidos en todas tus pantallas.",
-  },
-  {
-    icon: Users,
-    title: "Gestión de colas",
-    desc: "Sistema inteligente de turnos que mejora la experiencia de espera del cliente.",
-  },
+const bubbles = [
+  "Tótems interactivos",
+  "Kioskos táctiles",
+  "Gestión de colas",
+  "Pantallas verticales",
+  "Señalización dinámica",
+  "Múltiples formatos",
+  "Contenido en tiempo real",
+  "Diseño personalizado",
+  "Wayfinding digital",
+  "Alta luminosidad",
 ];
 
 const cmsFeatures = [
