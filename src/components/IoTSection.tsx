@@ -84,14 +84,6 @@ const IoTSection = () => (
                 className="w-full h-auto object-cover aspect-[4/5]"
                 loading="lazy"
               />
-              <motion.div
-                className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur border border-accent/40 shadow-xl"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, type: "spring" }}
-              >
-                
             </motion.div>
           </div>
         </ScrollReveal>
