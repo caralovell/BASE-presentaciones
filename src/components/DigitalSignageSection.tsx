@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { LayoutGrid, SplitSquareVertical, Radio, MapPin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/cms-dashboard.jpg";
-import ledWall1 from "@/assets/led-wall-1.jpg";
-import ledWall2 from "@/assets/led-wall-2.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
@@ -18,29 +15,6 @@ const totemSecondary = [
 ];
 
 const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
-
-const cmsFeatures = [
-  {
-    icon: LayoutGrid,
-    title: "Control centralizado",
-    desc: "Gestiona todo el contenido de señalización digital desde un único panel.",
-  },
-  {
-    icon: SplitSquareVertical,
-    title: "Partición de pantalla",
-    desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos.",
-  },
-  {
-    icon: Radio,
-    title: "Gestión de colas vía API",
-    desc: "Integración con sistemas de turnos para actualizar información en tiempo real.",
-  },
-  {
-    icon: MapPin,
-    title: "Segmentación por zona",
-    desc: "Contenido personalizado para cada zona o espacio según su finalidad y público.",
-  },
-];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
