@@ -118,17 +118,6 @@ const SmartSignageSection = () => (
             {/* Glow */}
             <motion.div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-            {/* Animated rings */}
-            <motion.div
-              className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full border border-accent/20"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full border border-accent/30"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            />
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
