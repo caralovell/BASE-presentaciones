@@ -15,13 +15,13 @@ const Index = () => (
     <SectionDivider />
     <DigitalSignageSection />
     <SectionDivider />
+    <CmsSection />
+    <SectionDivider />
     <SmartSignageSection />
     <SectionDivider />
     <NavilensSection />
     <SectionDivider />
     <WayfindingSection />
-    <SectionDivider />
-    <CmsSection />
     <SectionDivider />
     <AiAgentSection />
     <BudgetSection />

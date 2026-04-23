@@ -11,7 +11,7 @@ const NavilensSection = () => (
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">03</span>
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">04</span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
             Navegación Accesible
           </h2>
