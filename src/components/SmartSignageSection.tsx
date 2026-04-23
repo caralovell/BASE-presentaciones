@@ -7,9 +7,9 @@ import qrAscires from "@/assets/qr-ascires.png";
 import nfcWipass from "@/assets/nfc-wipass.png";
 
 const nfcUseCases = [
-  { icon: CheckCircle2, text: "Check-in automático al llegar al hospital" },
+  { icon: CheckCircle2, text: "Check-in automático al llegar al recinto" },
   { icon: MapPin, text: "Puntos de información interactivos en cada planta" },
-  { icon: Smartphone, text: "Guía personalizada del paciente por todo el recinto" },
+  { icon: Smartphone, text: "Guía personalizada del usuario por todo el espacio" },
 ];
 
 const SmartSignageSection = () => (
@@ -30,7 +30,7 @@ const SmartSignageSection = () => (
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Smart Signage</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Convierte la señalización tradicional en un punto de contacto inteligente.
-            Un solo gesto del paciente, infinitas posibilidades.
+            Un solo gesto del usuario, infinitas posibilidades.
           </p>
         </div>
       </ScrollReveal>
@@ -66,7 +66,7 @@ const SmartSignageSection = () => (
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Información instantánea al alcance del paciente: citas, ubicaciones,
+                Información instantánea al alcance del usuario: horarios, ubicaciones,
                 servicios y más. Solo necesitan su móvil.
               </p>
 
@@ -79,7 +79,7 @@ const SmartSignageSection = () => (
                 />
                 <motion.img
                   src={qrAscires}
-                  alt="qr hospital signage"
+                  alt="qr signage"
                   className="relative w-full max-w-[220px] rounded-2xl shadow-xl object-contain"
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   animate={{ y: [0, -8, 0] }}
@@ -140,7 +140,7 @@ const SmartSignageSection = () => (
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                Un simple toque del teléfono y el paciente accede a información personalizada.
+                Un simple toque del teléfono y el usuario accede a información personalizada.
                 Sin barreras, sin fricciones.
               </p>
 
@@ -148,7 +148,7 @@ const SmartSignageSection = () => (
               <div className="relative rounded-2xl overflow-hidden mb-5 shadow-2xl border border-accent/20">
                 <motion.img
                   src={nfcWipass}
-                  alt="nfc hospital interaction"
+                  alt="nfc interaction"
                   className="w-full h-44 object-cover"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
