@@ -105,8 +105,8 @@ const DigitalSignageSection = () => (
           <div>
             <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">Gestión de Contenido</h3>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Gestionar y mostrar contenidos digitales (imágenes, vídeos, datos en tiempo real, dashboards, etc.) en
-              pantallas ubicadas en espacios físicos como tiendas, oficinas, aeropuertos o centros comerciales
+              Gestionar y mostrar contenidos digitales en pantallas ubicadas en espacios físicos como tiendas, oficinas,
+              aeropuertos o centros comerciales
             </p>
           </div>
           <motion.div
