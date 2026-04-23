@@ -72,9 +72,9 @@ const DigitalSignageSection = () => (
 
       {/* Hero image + 4 secondary grid */}
       <ScrollReveal delay={0.15}>
-        <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 mb-20 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-5 mb-20 max-w-4xl mx-auto">
           <motion.div
-            className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-auto lg:h-full min-h-[420px]"
+            className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-auto lg:h-full min-h-[320px]"
             whileHover={{ scale: 1.015 }}
             transition={{ duration: 0.3 }}
           >
