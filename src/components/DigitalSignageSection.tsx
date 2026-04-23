@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { LayoutGrid, SplitSquareVertical, Radio, MapPin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/cms-dashboard.jpg";
+import ledWall1 from "@/assets/led-wall-1.jpg";
+import ledWall2 from "@/assets/led-wall-2.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
@@ -15,18 +17,29 @@ const totemSecondary = [
   { src: totem4, alt: "Tótem digital con anuncio en oficina corporativa" },
 ];
 
-const bubbles = [
-  "Tótems interactivos",
-  "Kioskos táctiles",
-  "Gestión de colas",
-  "Wayfinding digital",
-];
+const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
 
 const cmsFeatures = [
-  { icon: LayoutGrid, title: "Control centralizado", desc: "Gestiona todo el contenido de señalización digital desde un único panel." },
-  { icon: SplitSquareVertical, title: "Partición de pantalla", desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos." },
-  { icon: Radio, title: "Gestión de colas vía API", desc: "Integración con sistemas de turnos para actualizar información en tiempo real." },
-  { icon: MapPin, title: "Segmentación por zona", desc: "Contenido personalizado para cada zona o espacio según su finalidad y público." },
+  {
+    icon: LayoutGrid,
+    title: "Control centralizado",
+    desc: "Gestiona todo el contenido de señalización digital desde un único panel.",
+  },
+  {
+    icon: SplitSquareVertical,
+    title: "Partición de pantalla",
+    desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos.",
+  },
+  {
+    icon: Radio,
+    title: "Gestión de colas vía API",
+    desc: "Integración con sistemas de turnos para actualizar información en tiempo real.",
+  },
+  {
+    icon: MapPin,
+    title: "Segmentación por zona",
+    desc: "Contenido personalizado para cada zona o espacio según su finalidad y público.",
+  },
 ];
 
 const DigitalSignageSection = () => (
@@ -45,9 +58,9 @@ const DigitalSignageSection = () => (
       <ScrollReveal delay={0.1}>
         <div className="max-w-4xl mx-auto text-center mb-10">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla,
-            creando una experiencia única. Servicio completo de Digital Signage, incluyendo la instalación de
-            pantallas, software y sistemas de gestión.
+            Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla, creando
+            una experiencia única. Servicio completo de Digital Signage, incluyendo la instalación de pantallas,
+            software y sistemas de gestión.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2.5 mt-6">
@@ -188,7 +201,10 @@ const DigitalSignageSection = () => (
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-500" />
                   <div className="relative">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-3 group-hover:bg-accent group-hover:border-accent transition-colors duration-300">
-                      <Icon className="w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors duration-300" strokeWidth={1.5} />
+                      <Icon
+                        className="w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors duration-300"
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <h4 className="text-sm font-bold mb-1 text-foreground">{f.title}</h4>
                     <p className="text-xs leading-relaxed text-muted-foreground">{f.desc}</p>
@@ -199,6 +215,42 @@ const DigitalSignageSection = () => (
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Sub-section: Pantallas LED */}
+      <ScrollReveal>
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground">Pantallas LED</h3>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.1}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
+            Pantallas LED de alta luminosidad y resolución, ideales tanto para grandes espacios interiores como para
+            fachadas exteriores. Configurables en cualquier formato y tamaño, ofrecen un impacto visual incomparable con
+            un consumo eficiente y un mantenimiento mínimo.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <motion.img
+              src={ledWall1}
+              alt="Pantalla LED interior"
+              className="w-full rounded-2xl shadow-xl border-2 border-accent/20 object-cover aspect-[4/3]"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              loading="lazy"
+            />
+            <motion.img
+              src={ledWall2}
+              alt="Pantalla LED exterior"
+              className="w-full rounded-2xl shadow-xl border-2 border-accent/20 object-cover aspect-[4/3]"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </ScrollReveal>
     </div>
   </section>
 );
