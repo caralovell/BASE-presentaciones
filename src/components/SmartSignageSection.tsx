@@ -63,8 +63,8 @@ const SmartSignageSection = () => (
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Información instantánea al alcance del usuario: horarios, ubicaciones, servicios y más. Solo necesitan
-                  su móvil.
+                  Transforma tu negocio en un ecosistema inteligente impulsado por IA conversacional, datos en tiempo
+                  real y conectividad sin interrupciones.
                 </p>
 
                 <ul className="space-y-2.5">
@@ -118,7 +118,6 @@ const SmartSignageSection = () => (
             {/* Glow */}
             <motion.div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -149,7 +148,6 @@ const SmartSignageSection = () => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent" />
               </div>
-
             </div>
           </motion.div>
         </ScrollReveal>
