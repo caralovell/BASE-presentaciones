@@ -67,94 +67,102 @@ const IoTSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* Hero visual: dashboard mockup */}
+      {/* Hero visual: totem with dashboard */}
       <ScrollReveal delay={0.1}>
-        <div className="relative max-w-5xl mx-auto mb-16">
-          {/* Glow */}
-          <div
-            className="absolute -inset-8 rounded-[3rem] blur-3xl opacity-50"
-            style={{
-              background: "radial-gradient(circle, hsl(var(--accent) / 0.25), transparent 70%)",
-            }}
-          />
-
-          <div className="relative rounded-3xl bg-card border border-border shadow-2xl overflow-hidden">
-            {/* Top bar */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-background/50">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center">
-                  <Activity className="w-4 h-4 text-accent" strokeWidth={2} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-foreground leading-tight">Panel de control IoT</p>
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Tiempo real</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/10 border border-accent/30">
-                  <motion.div
-                    className="w-1.5 h-1.5 rounded-full bg-accent"
-                    animate={{ opacity: [1, 0.3, 1] }}
-                    transition={{ duration: 1.6, repeat: Infinity }}
-                  />
-                  <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Live</span>
-                </div>
-              </div>
+        <div className="relative max-w-6xl mx-auto mb-16">
+          <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-8 lg:gap-12 items-center">
+            {/* Totem image */}
+            <div className="relative">
+              <motion.div
+                className="absolute -inset-6 rounded-[3rem] blur-3xl opacity-50"
+                style={{ background: "radial-gradient(circle, hsl(var(--accent) / 0.3), transparent 70%)" }}
+                animate={{ opacity: [0.35, 0.6, 0.35] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="relative rounded-3xl overflow-hidden shadow-2xl border border-accent/20"
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              >
+                <img
+                  src={iotTotem}
+                  alt="Tótem digital mostrando dashboard IoT en tiempo real"
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                />
+              </motion.div>
+              <motion.div
+                className="absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur border border-accent/40 shadow-xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, type: "spring" }}
+              >
+                <motion.div
+                  className="w-1.5 h-1.5 rounded-full bg-accent"
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.6, repeat: Infinity }}
+                />
+                <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Live</span>
+              </motion.div>
             </div>
 
-            {/* KPI grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-              {kpis.map((kpi, i) => {
-                const Icon = kpi.icon;
-                return (
-                  <motion.div
-                    key={kpi.label}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="bg-card p-5"
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
-                      <span className="text-[10px] font-semibold text-accent">{kpi.trend}</span>
-                    </div>
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
-                      {kpi.label}
-                    </p>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-2xl md:text-3xl font-bold text-foreground">{kpi.value}</span>
-                      <span className="text-xs text-muted-foreground">{kpi.unit}</span>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Chart area */}
-            <div className="p-6 border-t border-border">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-accent" strokeWidth={2} />
-                  <p className="text-sm font-bold text-foreground">Consumo energético anual</p>
-                </div>
-                <span className="text-[10px] uppercase tracking-wider text-muted-foreground">kWh</span>
+            {/* KPIs + chart side */}
+            <div className="space-y-5">
+              <div className="grid grid-cols-2 gap-3">
+                {kpis.map((kpi, i) => {
+                  const Icon = kpi.icon;
+                  return (
+                    <motion.div
+                      key={kpi.label}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="p-4 rounded-2xl bg-card border border-border hover:border-accent/40 transition-colors"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
+                        <span className="text-[10px] font-semibold text-accent">{kpi.trend}</span>
+                      </div>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
+                        {kpi.label}
+                      </p>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-bold text-foreground">{kpi.value}</span>
+                        <span className="text-xs text-muted-foreground">{kpi.unit}</span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
-              <div className="flex items-end gap-2 h-32">
-                {barValues.map((v, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ height: 0, opacity: 0 }}
-                    whileInView={{ height: `${v}%`, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.04, duration: 0.6, ease: "easeOut" }}
-                    className="flex-1 rounded-t-md bg-gradient-to-t from-accent/40 to-accent relative group"
-                  >
-                    <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] text-muted-foreground">
-                      {barLabels[i]}
-                    </span>
-                  </motion.div>
-                ))}
+
+              <div className="p-5 rounded-2xl bg-card border border-border">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-accent" strokeWidth={2} />
+                    <p className="text-sm font-bold text-foreground">Consumo energético anual</p>
+                  </div>
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">kWh</span>
+                </div>
+                <div className="flex items-end gap-1.5 h-24">
+                  {barValues.map((v, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ height: 0, opacity: 0 }}
+                      whileInView={{ height: `${v}%`, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.04, duration: 0.6, ease: "easeOut" }}
+                      className="flex-1 rounded-t-md bg-gradient-to-t from-accent/40 to-accent relative"
+                    >
+                      <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] text-muted-foreground">
+                        {barLabels[i]}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
