@@ -10,7 +10,7 @@ const NavilensSection = () => (
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">02</span>
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">03</span>
 
           <div className="flex justify-center mb-6">
             <img src={navilensLogo} alt="navilens logo" className="max-w-[180px] w-full object-contain" />
