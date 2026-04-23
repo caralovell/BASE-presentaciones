@@ -27,11 +27,13 @@ const SmartSignageSection = () => (
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">02</span>
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
+            02
+          </span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Smart Signage</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Convierte la señalización tradicional en un punto de contacto inteligente.
-            Un solo gesto del usuario, infinitas posibilidades.
+            Convierte la señalización tradicional en un punto de contacto inteligente. Un solo gesto del usuario,
+            infinitas posibilidades.
           </p>
         </div>
       </ScrollReveal>
@@ -46,9 +48,7 @@ const SmartSignageSection = () => (
             className="group relative h-full rounded-3xl bg-card border border-border hover:border-accent/50 p-8 overflow-hidden transition-colors duration-500"
           >
             {/* Glow */}
-            <motion.div
-              className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-            />
+            <motion.div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <div className="relative grid grid-cols-[1fr_auto] gap-5 items-center">
               <div>
@@ -63,8 +63,8 @@ const SmartSignageSection = () => (
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Información instantánea al alcance del usuario: horarios, ubicaciones,
-                  servicios y más. Solo necesitan su móvil.
+                  Información instantánea al alcance del usuario: horarios, ubicaciones, servicios y más. Solo necesitan
+                  su móvil.
                 </p>
 
                 <ul className="space-y-2.5">
@@ -89,7 +89,7 @@ const SmartSignageSection = () => (
               </div>
 
               {/* QR Image on the right */}
-              <div className="relative flex justify-center shrink-0">
+              <div className="relative flex justify-center shrink-0 self-stretch items-center">
                 <motion.div
                   className="absolute inset-0 bg-gradient-radial from-accent/20 to-transparent blur-2xl"
                   animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
@@ -98,19 +98,13 @@ const SmartSignageSection = () => (
                 <motion.img
                   src={qrAscires}
                   alt="qr signage"
-                  className="relative w-full max-w-[180px] rounded-2xl shadow-xl object-contain"
+                  className="relative w-full max-w-[220px] rounded-2xl shadow-xl object-cover h-full"
                   whileHover={{ scale: 1.05, rotate: 2 }}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                    scale: { duration: 0.3 },
-                    rotate: { duration: 0.3 },
-                  }}
+                  transition={{ duration: 0.3 }}
                   loading="lazy"
                 />
               </div>
             </div>
-
           </motion.div>
         </ScrollReveal>
 
@@ -122,9 +116,7 @@ const SmartSignageSection = () => (
             className="group relative h-full rounded-3xl bg-card border border-border hover:border-accent/50 p-8 overflow-hidden transition-colors duration-500"
           >
             {/* Glow */}
-            <motion.div
-              className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-            />
+            <motion.div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             {/* Animated rings */}
             <motion.div
@@ -144,14 +136,16 @@ const SmartSignageSection = () => (
                   <img src={iconNfc} alt="NFC" className="w-8 h-8 object-contain" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Sin apps · Sin cámara</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
+                    Sin apps · Sin cámara
+                  </span>
                   <h3 className="text-2xl font-bold text-foreground">Dispositivos NFC</h3>
                 </div>
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                Un simple toque del teléfono y el usuario accede a información personalizada.
-                Sin barreras, sin fricciones.
+                Un simple toque del teléfono y el usuario accede a información personalizada. Sin barreras, sin
+                fricciones.
               </p>
 
               {/* NFC image */}
