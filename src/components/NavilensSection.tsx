@@ -116,9 +116,6 @@ const NavilensSection = () => (
     />
   </div>
 </div>
-
-          
-          </div>
         </motion.div>
       </ScrollReveal>
     </div>
