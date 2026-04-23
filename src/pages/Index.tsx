@@ -2,7 +2,6 @@ import HeroSection from "@/components/HeroSection";
 import EcosystemSection from "@/components/EcosystemSection";
 import DigitalSignageSection from "@/components/DigitalSignageSection";
 import SmartSignageSection from "@/components/SmartSignageSection";
-import NavilensSection from "@/components/NavilensSection";
 import WayfindingSection from "@/components/WayfindingSection";
 import IoTSection from "@/components/IoTSection";
 import AiAgentSection from "@/components/AiAgentSection";
@@ -19,11 +18,9 @@ const Index = () => (
     <SectionDivider />
     <DigitalSignageSection />
     <SectionDivider />
-    <SmartSignageSection />
-    <SectionDivider />
-    <NavilensSection />
-    <SectionDivider />
-    <WayfindingSection />
+      <SmartSignageSection />
+      <SectionDivider />
+      <WayfindingSection />
     <SectionDivider />
     <IoTSection />
     <SectionDivider />

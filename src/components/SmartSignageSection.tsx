@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Smartphone, MapPin, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import NavilensSection from "./NavilensSection";
 import iconQr from "@/assets/icon-qr.png";
 import iconNfc from "@/assets/icon-nfc.png";
 import qrAscires from "@/assets/qr-ascires.png";
@@ -167,6 +168,9 @@ const SmartSignageSection = () => (
           </motion.div>
         </ScrollReveal>
       </div>
+
+      {/* Accesibilidad como subsección */}
+      <NavilensSection />
     </div>
   </section>
 );
