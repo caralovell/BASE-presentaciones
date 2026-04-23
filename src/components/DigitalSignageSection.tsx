@@ -109,20 +109,37 @@ const DigitalSignageSection = () => (
               aeropuertos o centros comerciales
             </p>
           </div>
-          <motion.div
-            whileHover={{ y: -4 }}
-            transition={{ type: "spring", stiffness: 200, damping: 18 }}
-            className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px] justify-self-center md:justify-self-end"
-          >
-            <img
-              src={cmsDashboard}
-              alt="Panel de gestión de contenido"
-              className="w-full h-auto object-cover"
-              loading="lazy"
-              width={1024}
-              height={768}
-            />
-          </motion.div>
+          // DESPUÉS
+          <div className="flex gap-3 justify-self-center md:justify-self-end">
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px]"
+            >
+              <img
+                src={cmsDashboard}
+                alt="Panel de gestión de contenido"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                width={1024}
+                height={768}
+              />
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px]"
+            >
+              <img
+                src={cmsDashboard}
+                alt="Panel de gestión de contenido"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                width={1024}
+                height={768}
+              />
+            </motion.div>
+          </div>
         </div>
       </ScrollReveal>
     </div>
