@@ -31,8 +31,7 @@ const NavilensSection = () => (
               </div>
 
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Códigos geométricos legibles a hasta <strong className="text-foreground">12 metros</strong> sin
-                necesidad de enfocar la cámara. Información por voz al instante.
+                La nueva tecnología disruptiva de señalética para personas con discapacidad visual.
               </p>
             </div>
 
@@ -72,9 +71,8 @@ const NavilensSection = () => (
               </div>
 
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Transforma los sonidos del entorno en{" "}
-                <strong className="text-foreground">alertas visuales y vibratorias</strong>, devolviendo autonomía a las
-                personas sordas.
+                Creamos tecnología innovadora para personas con pérdida auditiva, y para empresas e instituciones
+                comprometidas con la accesibilidad.
               </p>
             </div>
 
