@@ -1,19 +1,29 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import { Monitor, Tablet, Smartphone } from "lucide-react";
-import totemImg from "@/assets/totem.png";
+import aiAgent from "@/assets/ai-agent.jpg";
+import aiAvatar from "@/assets/ai-avatar.jpg";
+import aiAdaptive from "@/assets/ai-adaptive.jpg";
 
-const useCases = [
-  { title: "Operaciones internas", desc: "Automatiza procesos administrativos y reduce la carga operativa del personal hospitalario." },
-  { title: "Soporte al personal", desc: "Asistencia en tiempo real para protocolos, consultas de procedimientos y gestión de turnos." },
-  { title: "Atención al paciente", desc: "Respuestas inmediatas a preguntas frecuentes, orientación y seguimiento personalizado." },
-  { title: "Formación y onboarding", desc: "Acompañamiento inteligente en la incorporación de nuevo personal sanitario." },
-  { title: "Cumplimiento normativo", desc: "Monitorización automática de estándares y alertas de compliance en tiempo real." },
-  { title: "Integración con sistemas hospitalarios", desc: "Conexión con HIS, ERP y otros sistemas para centralizar datos y mejorar la eficiencia operativa en todo el entorno hospitalario." },
+const blocks = [
+  {
+    title: "Agente IA",
+    img: aiAgent,
+    desc: "Un asistente conversacional inteligente que automatiza procesos, atiende consultas y guía a pacientes y personal en tiempo real, integrándose con los sistemas hospitalarios existentes.",
+  },
+  {
+    title: "Avatar IA",
+    img: aiAvatar,
+    desc: "Un avatar virtual humano y empático que da rostro a la tecnología — interactúa por voz y gesto en pantallas y tótems, ofreciendo una experiencia cercana y accesible para cualquier usuario.",
+  },
+  {
+    title: "IA Adaptable",
+    img: aiAdaptive,
+    desc: "Un asistente personalizable que aprende de cada entorno, adapta su tono, sus respuestas y sus capacidades a las necesidades específicas de cada departamento, sala o caso de uso.",
+  },
 ];
 
 const AiAgentSection = () => (
-  <section id="agente-ia" className="py-12 md:py-16 bg-background relative overflow-hidden">
+  <section id="inteligencia-artificial" className="py-12 md:py-16 bg-background relative overflow-hidden">
     <motion.div
       className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.05]"
       style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
@@ -23,38 +33,57 @@ const AiAgentSection = () => (
 
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">06</span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-            Agente IA
+            Inteligencia Artificial
           </h2>
         </div>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.05}>
-        <div className="flex justify-center mb-10">
-          <img
-            src={totemImg}
-            alt="virtual assistant hospital"
-            className="w-full max-w-md rounded-2xl shadow-2xl border-2 border-accent/20 object-contain"
-          />
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.1}>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto mb-10">
-          {useCases.map((uc, i) => (
-            <div
-              key={i}
-              className="glass-card p-5 hover:shadow-xl transition-shadow duration-300"
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {blocks.map((b, i) => (
+          <ScrollReveal key={b.title} delay={i * 0.12}>
+            <motion.div
+              className="group relative rounded-2xl overflow-hidden border-2 border-accent/20 bg-card shadow-xl h-full flex flex-col"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <h3 className="text-base font-bold text-foreground mb-1">{uc.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{uc.desc}</p>
-            </div>
-          ))}
-        </div>
-      </ScrollReveal>
+              <div className="relative overflow-hidden aspect-square">
+                <motion.img
+                  src={b.img}
+                  alt={b.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <motion.div
+                  className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: "radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.25), transparent 60%)",
+                  }}
+                />
+              </div>
 
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold text-foreground mb-3">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              </div>
+
+              {/* Animated accent bar */}
+              <motion.div
+                className="absolute bottom-0 left-0 h-1 bg-accent"
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3 + i * 0.12, ease: "easeOut" }}
+              />
+            </motion.div>
+          </ScrollReveal>
+        ))}
+      </div>
     </div>
   </section>
 );
