@@ -3,6 +3,7 @@ import DigitalSignageSection from "@/components/DigitalSignageSection";
 import SmartSignageSection from "@/components/SmartSignageSection";
 import NavilensSection from "@/components/NavilensSection";
 import WayfindingSection from "@/components/WayfindingSection";
+import IoTSection from "@/components/IoTSection";
 import AiAgentSection from "@/components/AiAgentSection";
 import BudgetSection from "@/components/BudgetSection";
 import FooterSection from "@/components/FooterSection";
@@ -19,6 +20,8 @@ const Index = () => (
     <NavilensSection />
     <SectionDivider />
     <WayfindingSection />
+    <SectionDivider />
+    <IoTSection />
     <SectionDivider />
     <AiAgentSection />
     <BudgetSection />
