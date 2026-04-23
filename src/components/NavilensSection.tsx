@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import navilensLogo from "@/assets/navilens-logo.png";
+import navilensLogo from "@/assets/navilens-logo.jpg";
 import navilensCode from "@/assets/navilens-code.png";
 import visualfyLogo from "@/assets/visualfy-logo.png";
 import visualfyDevice from "@/assets/visualfy-device.jpg";
