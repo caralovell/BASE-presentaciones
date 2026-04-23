@@ -161,25 +161,6 @@ const SmartSignageSection = () => (
                 <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent" />
               </div>
 
-              {/* Use cases */}
-              <ul className="space-y-2.5">
-                {nfcUseCases.map((u, i) => {
-                  const Icon = u.icon;
-                  return (
-                    <motion.li
-                      key={u.text}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 + i * 0.08 }}
-                      className="flex items-start gap-2.5 text-sm text-foreground/90"
-                    >
-                      <Icon className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span>{u.text}</span>
-                    </motion.li>
-                  );
-                })}
-              </ul>
             </div>
           </motion.div>
         </ScrollReveal>
