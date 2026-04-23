@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { LayoutGrid, SplitSquareVertical, Radio, MapPin } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import cmsWaapiti from "@/assets/cms-waapiti.png";
+import cmsDashboard from "@/assets/cms-dashboard.jpg";
 import ledWall1 from "@/assets/led-wall-1.jpg";
 import ledWall2 from "@/assets/led-wall-2.jpg";
 import digitalSignageKiosk from "@/assets/digital-signage-kiosk.jpg";
@@ -13,10 +14,10 @@ const bubbles = [
 ];
 
 const cmsFeatures = [
-  { title: "Control centralizado", desc: "Gestiona todo el contenido de señalización digital desde un único panel." },
-  { title: "Partición de pantalla", desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos." },
-  { title: "Gestión de colas vía API", desc: "Integración con sistemas de turnos para actualizar información en tiempo real." },
-  { title: "Segmentación por sala", desc: "Contenido personalizado para cada sala de espera según departamento y especialidad." },
+  { icon: LayoutGrid, title: "Control centralizado", desc: "Gestiona todo el contenido de señalización digital desde un único panel." },
+  { icon: SplitSquareVertical, title: "Partición de pantalla", desc: "Divide cada pantalla en zonas independientes para múltiples contenidos simultáneos." },
+  { icon: Radio, title: "Gestión de colas vía API", desc: "Integración con sistemas de turnos para actualizar información en tiempo real." },
+  { icon: MapPin, title: "Segmentación por sala", desc: "Contenido personalizado para cada sala de espera según departamento y especialidad." },
 ];
 
 const DigitalSignageSection = () => (
