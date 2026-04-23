@@ -6,11 +6,6 @@ import {
   Headphones,
   Bell,
   Scale,
-  Thermometer,
-  Droplets,
-  Zap,
-  Wifi,
-  TrendingUp,
 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import iotTotem from "@/assets/iot-totem-dashboard.jpg";
@@ -23,17 +18,6 @@ const features = [
   { icon: Bell, title: "Notificaciones", desc: "Alertas instantáneas por email, SMS o notificación push." },
   { icon: Scale, title: "Escalabilidad", desc: "Despliega cientos de sensores y dispositivos en minutos." },
 ];
-
-const kpis = [
-  { icon: Thermometer, label: "Temperatura", value: "22.4", unit: "°C", trend: "+0.3" },
-  { icon: Droplets, label: "Humedad", value: "47", unit: "%", trend: "−2" },
-  { icon: Zap, label: "Consumo", value: "832", unit: "kWh", trend: "−12%" },
-  { icon: Wifi, label: "Sensores", value: "147", unit: "online", trend: "99.8%" },
-];
-
-// Static illustrative bar chart values (PDF-friendly, no live animation)
-const barValues = [42, 68, 55, 81, 73, 90, 64, 77, 58, 85, 71, 95];
-const barLabels = ["E", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
 const IoTSection = () => (
   <section id="iot" className="py-16 md:py-24 bg-surface relative overflow-hidden">
