@@ -4,7 +4,18 @@ import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/cms-dashboard.jpg";
 import ledWall1 from "@/assets/led-wall-1.jpg";
 import ledWall2 from "@/assets/led-wall-2.jpg";
-import digitalSignageKiosk from "@/assets/digital-signage-kiosk.jpg";
+import totemMain from "@/assets/totem-main.jpg";
+import totem1 from "@/assets/totem-1.jpg";
+import totem2 from "@/assets/totem-2.jpg";
+import totem3 from "@/assets/totem-3.jpg";
+import totem4 from "@/assets/totem-4.jpg";
+
+const totemSecondary = [
+  { src: totem1, alt: "Tótem digital con anuncio en centro comercial" },
+  { src: totem2, alt: "Tótem digital con anuncio en aeropuerto" },
+  { src: totem3, alt: "Tótem digital con anuncio en museo" },
+  { src: totem4, alt: "Tótem digital con anuncio en oficina corporativa" },
+];
 
 const bubbles = [
   "Tótems interactivos",
