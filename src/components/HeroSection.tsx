@@ -37,7 +37,9 @@ const HeroSection = () => (
     <div className="relative z-10 flex flex-col items-center gap-8 max-w-3xl w-full">
       {/* 1. Client logo */}
       <motion.div {...fadeUp(0.1)}>
-        <img src={asciresLogo} alt="Ascires" className="h-48 md:h-64 object-contain" width={800} height={512} />
+        <div className="h-48 md:h-64 w-80 md:w-[28rem] bg-muted flex items-center justify-center text-muted-foreground text-sm uppercase tracking-[0.3em]">
+          Logo
+        </div>
       </motion.div>
 
       {/* 2. Label */}
