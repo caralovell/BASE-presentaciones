@@ -1,129 +1,107 @@
 import { motion } from "framer-motion";
-import {
-  LayoutDashboard,
-  FileText,
-  Sparkles,
-  Headphones,
-  Bell,
-  Scale,
-} from "lucide-react";
+import { LayoutDashboard, FileText, Bell, Scale } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import iotTotem from "@/assets/iot-totem-dashboard.jpg";
 
 const features = [
-  { icon: LayoutDashboard, title: "Dashboards", desc: "Paneles personalizados con métricas clave en una sola vista." },
-  { icon: FileText, title: "Informes", desc: "Reportes en tiempo real e históricos generados al instante." },
-  { icon: Sparkles, title: "Fácil de usar", desc: "Gestión intuitiva sin necesidad de conocimientos técnicos." },
-  { icon: Headphones, title: "Centro de ayuda", desc: "Soporte técnico y documentación siempre disponibles." },
-  { icon: Bell, title: "Notificaciones", desc: "Alertas instantáneas por email, SMS o notificación push." },
-  { icon: Scale, title: "Escalabilidad", desc: "Despliega cientos de sensores y dispositivos en minutos." },
+  { icon: LayoutDashboard, title: "Dashboards", desc: "Métricas clave en una sola vista." },
+  { icon: FileText, title: "Informes", desc: "Reportes en tiempo real e históricos." },
+  { icon: Bell, title: "Alertas", desc: "Notificaciones por email, SMS o push." },
+  { icon: Scale, title: "Escalable", desc: "Cientos de dispositivos en minutos." },
 ];
 
 const IoTSection = () => (
-  <section id="iot" className="py-16 md:py-24 bg-surface relative overflow-hidden">
-    {/* Subtle background */}
+  <section id="iot" className="py-12 md:py-16 bg-surface relative overflow-hidden">
     <div
       className="absolute inset-0 opacity-[0.04]"
       style={{
-        backgroundImage:
-          "radial-gradient(circle at 1px 1px, hsl(var(--accent)) 1px, transparent 0)",
+        backgroundImage: "radial-gradient(circle at 1px 1px, hsl(var(--accent)) 1px, transparent 0)",
         backgroundSize: "32px 32px",
       }}
-    />
-    <div
-      className="absolute -top-40 right-0 w-[600px] h-[600px] rounded-full opacity-[0.07]"
-      style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
     />
 
     <div className="container mx-auto px-4 relative z-10">
       {/* Header */}
       <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
             05
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Soluciones IoT</h2>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Convierte tu espacio en un entorno que{" "}
-            <strong className="text-foreground">recopila, analiza y reacciona</strong> en tiempo real.
-            Sensores, dashboards e inteligencia artificial trabajando en conjunto para optimizar cada decisión.
-          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Soluciones IoT</h2>
         </div>
       </ScrollReveal>
 
-      {/* Hero visual: totem with dashboard */}
-      <ScrollReveal delay={0.1}>
-        <div className="relative max-w-md mx-auto mb-16">
-          <div className="relative">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
+        {/* Left: text + 4 cards */}
+        <ScrollReveal direction="left">
+          <p className="text-base text-muted-foreground leading-relaxed mb-6">
+            Convierte tu espacio en un entorno que{" "}
+            <strong className="text-foreground">recopila, analiza y reacciona</strong> en tiempo real. Sensores,
+            dashboards e IA trabajando juntos.
+          </p>
+
+          <div className="grid grid-cols-2 gap-3">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={f.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07 }}
+                  whileHover={{ y: -3 }}
+                  className="group p-4 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
+                  </div>
+                  <h4 className="text-sm font-bold text-foreground mb-0.5">{f.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
+
+        {/* Right: image */}
+        <ScrollReveal direction="right" delay={0.1}>
+          <div className="relative max-w-sm mx-auto">
             <motion.div
-              className="absolute -inset-6 rounded-[3rem] blur-3xl opacity-50"
+              className="absolute -inset-6 rounded-[2rem] blur-3xl opacity-40"
               style={{ background: "radial-gradient(circle, hsl(var(--accent) / 0.3), transparent 70%)" }}
-              animate={{ opacity: [0.35, 0.6, 0.35] }}
+              animate={{ opacity: [0.3, 0.55, 0.3] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div
-              className="relative rounded-3xl overflow-hidden shadow-2xl border border-accent/20"
+              className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20"
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
             >
               <img
                 src={iotTotem}
-                alt="Tótem digital mostrando dashboard IoT en tiempo real"
+                alt="Dashboard IoT en tiempo real"
                 className="w-full h-auto object-cover aspect-[4/5]"
                 loading="lazy"
-                width={1024}
-                height={1280}
               />
-            </motion.div>
-            <motion.div
-              className="absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur border border-accent/40 shadow-xl"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, type: "spring" }}
-            >
               <motion.div
-                className="w-1.5 h-1.5 rounded-full bg-accent"
-                animate={{ opacity: [1, 0.3, 1] }}
-                transition={{ duration: 1.6, repeat: Infinity }}
-              />
-              <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Live</span>
+                className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/90 backdrop-blur border border-accent/40 shadow-xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, type: "spring" }}
+              >
+                <motion.div
+                  className="w-1.5 h-1.5 rounded-full bg-accent"
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1.6, repeat: Infinity }}
+                />
+                <span className="text-[10px] font-bold text-accent uppercase tracking-wider">Live</span>
+              </motion.div>
             </motion.div>
           </div>
-        </div>
-      </ScrollReveal>
-
-      {/* Features grid */}
-      <ScrollReveal delay={0.15}>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          {features.map((feature, i) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                whileHover={{ y: -4 }}
-                className="group relative p-5 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300 overflow-hidden"
-              >
-                <div
-                  className="absolute -top-12 -right-12 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "radial-gradient(circle, hsl(var(--accent) / 0.2), transparent 70%)" }}
-                />
-                <div className="relative">
-                  <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-accent/15 transition-transform duration-300">
-                    <Icon className="w-5 h-5 text-accent" strokeWidth={1.75} />
-                  </div>
-                  <h4 className="text-sm font-bold text-foreground mb-1">{feature.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{feature.desc}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
     </div>
   </section>
 );
