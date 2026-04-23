@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
-import { Eye, Ear, Globe2, MapPin, Sparkles, Heart } from "lucide-react";
+import { Ear, MapPin, Sparkles, Heart, Eye } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import navilensLogo from "@/assets/navilens-logo.png";
 import navilensCode from "@/assets/navilens-code.png";
 import navilensNyc from "@/assets/navilens-nyc.jpg";
 import visualfyLogo from "@/assets/visualfy-logo.png";
 import visualfyDevice from "@/assets/visualfy-device.jpg";
-
-const cities = ["Nueva York", "Barcelona", "Madrid", "Tokio", "París", "Londres", "Murcia", "Sídney"];
 
 const navilensFeatures = [
   { icon: Eye, title: "Lectura sin enfocar", desc: "Detecta códigos a 12 m sin necesidad de apuntar con precisión." },
@@ -42,36 +40,12 @@ const NavilensSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* Highlight banner */}
-      <ScrollReveal delay={0.1}>
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-16">
-          <span className="text-xs uppercase tracking-wider text-muted-foreground mr-2">Tecnología desplegada en</span>
-          {cities.map((city, i) => (
-            <motion.span
-              key={city}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 text-xs font-semibold text-foreground"
-            >
-              <Globe2 className="w-3 h-3 text-accent" />
-              {city}
-            </motion.span>
-          ))}
-        </div>
-      </ScrollReveal>
-
       {/* === NAVILENS BLOCK === */}
       <ScrollReveal>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center">
-            <Eye className="w-6 h-6 text-accent" strokeWidth={1.5} />
-          </div>
-          <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">Para personas con discapacidad visual</span>
-            <img src={navilensLogo} alt="Navilens" className="h-6 object-contain mt-1" />
-          </div>
+        <div className="flex flex-wrap items-center gap-4 md:gap-6 mb-6 mt-12">
+          <img src={navilensLogo} alt="Navilens" className="h-12 md:h-14 object-contain" />
+          <div className="h-10 w-px bg-border hidden md:block" />
+          <span className="text-sm md:text-base font-semibold text-foreground">Para personas con discapacidad visual</span>
         </div>
       </ScrollReveal>
 
@@ -96,15 +70,6 @@ const NavilensSection = () => (
                 width={1024}
                 height={768}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold mb-1">
-                  📍 MTA · Nueva York
-                </span>
-                <p className="text-sm text-foreground font-semibold">
-                  Implantado en todo el metro de NYC
-                </p>
-              </div>
             </motion.div>
 
             {/* Floating navilens code */}
@@ -152,14 +117,10 @@ const NavilensSection = () => (
 
       {/* === VISUALFY BLOCK === */}
       <ScrollReveal>
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center">
-            <Ear className="w-6 h-6 text-accent" strokeWidth={1.5} />
-          </div>
-          <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">Para personas sordas o con discapacidad auditiva</span>
-            <img src={visualfyLogo} alt="Visualfy" className="h-6 object-contain mt-1" />
-          </div>
+        <div className="flex flex-wrap items-center gap-4 md:gap-6 mb-6">
+          <img src={visualfyLogo} alt="Visualfy" className="h-12 md:h-14 object-contain" />
+          <div className="h-10 w-px bg-border hidden md:block" />
+          <span className="text-sm md:text-base font-semibold text-foreground">Para personas con discapacidad auditiva</span>
         </div>
       </ScrollReveal>
 
@@ -215,15 +176,6 @@ const NavilensSection = () => (
                 width={1024}
                 height={768}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="inline-block px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-bold mb-1">
-                  ✦ Tecnología española
-                </span>
-                <p className="text-sm text-foreground font-semibold">
-                  Sonidos convertidos en luz y vibración
-                </p>
-              </div>
             </motion.div>
           </div>
         </ScrollReveal>
