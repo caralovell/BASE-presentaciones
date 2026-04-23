@@ -45,51 +45,79 @@ const DigitalSignageSection = () => (
 
       {/* Intro block */}
       <ScrollReveal delay={0.1}>
-        <div className="grid lg:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-center mb-20">
-          <div>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla,
-              creando una experiencia única. Servicio completo de Digital Signage, incluyendo la instalación de
-              pantallas, software y sistemas de gestión.
-            </p>
+        <div className="max-w-4xl mx-auto text-center mb-10">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            Soluciones personalizadas que consiguen acercar tu marca a los usuarios de forma fácil y sencilla,
+            creando una experiencia única. Servicio completo de Digital Signage, incluyendo la instalación de
+            pantallas, software y sistemas de gestión.
+          </p>
 
-            <div className="flex flex-wrap gap-2.5">
-              {bubbles.map((label, i) => (
-                <motion.span
-                  key={label}
-                  initial={{ opacity: 0, scale: 0.6, y: 10 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{
-                    delay: i * 0.06,
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 14,
-                  }}
-                  whileHover={{ scale: 1.08, y: -3 }}
-                  className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-sm font-medium text-foreground hover:bg-accent/20 hover:border-accent/60 transition-colors cursor-default shadow-sm"
-                >
-                  {label}
-                </motion.span>
-              ))}
-            </div>
+          <div className="flex flex-wrap justify-center gap-2.5 mt-6">
+            {bubbles.map((label, i) => (
+              <motion.span
+                key={label}
+                initial={{ opacity: 0, scale: 0.6, y: 10 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.06, type: "spring", stiffness: 200, damping: 14 }}
+                whileHover={{ scale: 1.08, y: -3 }}
+                className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-sm font-medium text-foreground hover:bg-accent/20 hover:border-accent/60 transition-colors cursor-default shadow-sm"
+              >
+                {label}
+              </motion.span>
+            ))}
           </div>
+        </div>
+      </ScrollReveal>
 
+      {/* Hero image + 4 secondary grid */}
+      <ScrollReveal delay={0.15}>
+        <div className="grid lg:grid-cols-2 gap-5 lg:gap-6 mb-20 max-w-6xl mx-auto">
           <motion.div
-            className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[500px] w-full shadow-xl"
-            whileHover={{ scale: 1.02 }}
+            className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-auto lg:h-full min-h-[420px]"
+            whileHover={{ scale: 1.015 }}
             transition={{ duration: 0.3 }}
           >
             <img
-              src={digitalSignageKiosk}
-              alt="Tótem digital interactivo de señalización"
+              src={totemMain}
+              alt="Tótem digital interactivo principal con anuncio"
               className="w-full h-full object-cover"
               loading="lazy"
-              width={768}
-              height={1024}
+              width={1024}
+              height={1280}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/90 backdrop-blur text-accent-foreground text-xs font-bold shadow-lg">
+                <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                Formato vertical premium
+              </span>
+            </div>
           </motion.div>
+
+          <div className="grid grid-cols-2 gap-3 lg:gap-4">
+            {totemSecondary.map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className="relative rounded-xl overflow-hidden shadow-lg border border-border group cursor-pointer aspect-[4/5]"
+              >
+                <img
+                  src={t.src}
+                  alt={t.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  width={896}
+                  height={1152}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </ScrollReveal>
 
