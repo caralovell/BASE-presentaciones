@@ -79,13 +79,6 @@ const EcosystemSection = () => (
           })}
         </div>
       </ScrollReveal>
-
-      <ScrollReveal delay={0.3}>
-        <p className="text-center text-xs md:text-sm text-muted-foreground mt-10 max-w-2xl mx-auto italic">
-          Un todo que <span className="text-accent font-semibold not-italic">piensa, analiza y entrega</span> soluciones
-          en forma de experiencia memorable.
-        </p>
-      </ScrollReveal>
     </div>
   </section>
 );
