@@ -28,7 +28,7 @@ const EcosystemSection = () => (
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">Un ecosistema digital</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Diseñamos, integramos y gestionamos soluciones digitales para tus espacios — del diseño del espacio a su
+            Diseñamos, integramos y gestionamos soluciones digitales para tus espacios del diseño del espacio a su
             digitalización completa, con la <span className="text-accent font-semibold">inteligencia artificial</span>{" "}
             como eje central que conecta cada tecnología.
           </p>
