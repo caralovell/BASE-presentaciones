@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import cmsDashboard from "@/assets/cms-dashboard.jpg";
+import cmsDashboard from "@/assets/dashboard-mockup.png";
+import player from "@/assets/android-media-player.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
@@ -130,7 +131,7 @@ const DigitalSignageSection = () => (
               className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px]"
             >
               <img
-                src={cmsDashboard}
+                src={player}
                 alt="Panel de gestión de contenido"
                 className="w-full h-auto object-cover"
                 loading="lazy"
