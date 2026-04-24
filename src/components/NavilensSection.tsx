@@ -80,7 +80,7 @@ const NavilensSection = () => (
               <motion.img
                 src={visualfyDevice}
                 alt="Dispositivo Visualfy"
-                className="relative w-full max-w-[110px] rounded-2xl shadow-xl object-cover bg-background p-2"
+                className="relative w-full max-w-[150px] object-contain"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 animate={{ y: [0, -6, 0] }}
                 transition={{
