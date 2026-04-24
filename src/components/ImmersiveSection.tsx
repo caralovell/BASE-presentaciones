@@ -1,5 +1,4 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { Bot, Glasses, Flower2, Sparkles } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import { useEffect, useRef } from "react";
 import robotics from "@/assets/immersive-robotics.jpg";
@@ -8,10 +7,10 @@ import aroma from "@/assets/immersive-aroma.jpg";
 import hologram from "@/assets/immersive-hologram.jpg";
 
 const items = [
-  { title: "Robótica", icon: Bot, img: robotics },
-  { title: "Realidad Virtual", icon: Glasses, img: vr },
-  { title: "Mkt Sensorial", icon: Flower2, img: aroma },
-  { title: "Hologramas", icon: Sparkles, img: hologram },
+  { title: "Robótica", img: robotics },
+  { title: "Realidad Virtual", img: vr },
+  { title: "Mkt Sensorial", img: aroma },
+  { title: "Hologramas", img: hologram },
 ];
 
 const ImmersiveSection = () => {
@@ -60,15 +59,10 @@ const ImmersiveSection = () => {
         </ScrollReveal>
 
         <div ref={containerRef} className="relative max-w-3xl mx-auto">
-          {/* Arc layout: 4 cards in a slight convex arc */}
           <div className="flex justify-center items-end gap-4 md:gap-6 py-8">
             {items.map((it, i) => {
-              const Icon = it.icon;
-              // Arc offsets: middle cards higher, outer cards lower
               const arcOffsets = [-12, -28, -28, -12];
-              // Slight rotation for arc feel
               const rotations = [-6, -2, 2, 6];
-              // Staggered float animation
               const floatDelay = i * 0.8;
 
               return (
@@ -103,10 +97,7 @@ const ImmersiveSection = () => {
                       />
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
 
-                      <div className="absolute bottom-0 left-0 right-0 p-3 flex flex-col items-center gap-1.5">
-                        <div className="w-8 h-8 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/40 flex items-center justify-center">
-                          <Icon className="w-3.5 h-3.5 text-accent" strokeWidth={2} />
-                        </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-3 flex justify-center">
                         <h3 className="text-xs md:text-sm font-bold text-white text-center leading-tight">
                           {it.title}
                         </h3>
