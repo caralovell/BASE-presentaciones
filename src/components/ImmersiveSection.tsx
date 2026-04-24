@@ -1,76 +1,126 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Bot, Glasses, Flower2, Sparkles } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { useEffect, useRef } from "react";
 import robotics from "@/assets/immersive-robotics.jpg";
 import vr from "@/assets/immersive-vr.jpg";
 import aroma from "@/assets/immersive-aroma.jpg";
 import hologram from "@/assets/immersive-hologram.jpg";
 
 const items = [
-  { title: "Robótica", icon: Bot, img: robotics, span: "md:col-span-2 md:row-span-2" },
-  { title: "Realidad Virtual", icon: Glasses, img: vr, span: "md:col-span-2" },
-  { title: "Mkt Sensorial", icon: Flower2, img: aroma, span: "md:col-span-1" },
-  { title: "Hologramas", icon: Sparkles, img: hologram, span: "md:col-span-1" },
+  { title: "Robótica", icon: Bot, img: robotics },
+  { title: "Realidad Virtual", icon: Glasses, img: vr },
+  { title: "Mkt Sensorial", icon: Flower2, img: aroma },
+  { title: "Hologramas", icon: Sparkles, img: hologram },
 ];
 
-const ImmersiveSection = () => (
-  <section id="experiencia-inmersiva" className="py-12 md:py-16 bg-background relative overflow-hidden">
-    <motion.div
-      className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.05]"
-      style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
-      animate={{ scale: [1, 1.2, 1] }}
-      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-    />
-    <div className="container mx-auto px-4 relative z-10">
-      <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
-            07
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-3">Experiencia Inmersiva</h2>
-          <p className="text-sm md:text-base text-muted-foreground">
-            Tecnologías complementarias que elevan la experiencia sensorial del espacio.
-          </p>
-        </div>
-      </ScrollReveal>
-      <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[180px] gap-3 md:gap-4 max-w-6xl mx-auto">
-        {items.map((it, i) => {
-          const Icon = it.icon;
-          return (
-            <ScrollReveal key={it.title} delay={i * 0.1} className={it.span}>
-              <motion.div
-                className="group relative h-full min-h-[180px] rounded-2xl overflow-hidden border border-accent/20 cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              >
-                <motion.img
-                  src={it.img}
-                  alt={it.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-accent/10 transition-colors duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 flex items-center gap-3">
+const ImmersiveSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothX = useSpring(mouseX, { stiffness: 30, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 30, damping: 20 });
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+      mouseX.set(x * 15);
+      mouseY.set(y * 10);
+    };
+
+    container.addEventListener("mousemove", handleMouseMove);
+    return () => container.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <section id="experiencia-inmersiva" className="py-12 md:py-16 bg-background relative overflow-hidden">
+      <motion.div
+        className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.05]"
+        style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
+              07
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-3">Experiencia Inmersiva</h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Tecnologías complementarias que elevan la experiencia sensorial del espacio.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div ref={containerRef} className="relative max-w-3xl mx-auto">
+          {/* Arc layout: 4 cards in a slight convex arc */}
+          <div className="flex justify-center items-end gap-4 md:gap-6 py-8">
+            {items.map((it, i) => {
+              const Icon = it.icon;
+              // Arc offsets: middle cards higher, outer cards lower
+              const arcOffsets = [-12, -28, -28, -12];
+              // Slight rotation for arc feel
+              const rotations = [-6, -2, 2, 6];
+              // Staggered float animation
+              const floatDelay = i * 0.8;
+
+              return (
+                <ScrollReveal key={it.title} delay={i * 0.1}>
                   <motion.div
-                    className="w-9 h-9 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/40 flex items-center justify-center shrink-0"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
+                    className="group relative cursor-pointer"
+                    style={{
+                      x: smoothX,
+                      y: smoothY,
+                    }}
+                    animate={{
+                      y: [arcOffsets[i], arcOffsets[i] - 8, arcOffsets[i]],
+                      rotate: rotations[i],
+                    }}
+                    transition={{
+                      y: {
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: floatDelay,
+                      },
+                      rotate: { duration: 0.5 },
+                    }}
+                    whileHover={{ scale: 1.08, y: arcOffsets[i] - 16, rotate: 0 }}
                   >
-                    <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
+                    <div className="relative w-[130px] h-[180px] md:w-[150px] md:h-[210px] rounded-2xl overflow-hidden shadow-xl border border-accent/20">
+                      <img
+                        src={it.img}
+                        alt={it.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
+
+                      <div className="absolute bottom-0 left-0 right-0 p-3 flex flex-col items-center gap-1.5">
+                        <div className="w-8 h-8 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/40 flex items-center justify-center">
+                          <Icon className="w-3.5 h-3.5 text-accent" strokeWidth={2} />
+                        </div>
+                        <h3 className="text-xs md:text-sm font-bold text-white text-center leading-tight">
+                          {it.title}
+                        </h3>
+                      </div>
+                    </div>
                   </motion.div>
-                  <h3 className="text-base md:text-lg font-bold text-white">{it.title}</h3>
-                </div>
-              </motion.div>
-            </ScrollReveal>
-          );
-        })}
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ImmersiveSection;
