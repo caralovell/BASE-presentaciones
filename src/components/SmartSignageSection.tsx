@@ -118,7 +118,7 @@ const SmartSignageSection = () => (
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
-                <img src={iconNfc} alt="NFC" className="h-12 object-contain" />
+                <img src={iconNfc} alt="NFC" className="h-14 object-contain" />
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
                     Sin apps · Sin cámara
