@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Smartphone, MapPin, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import NavilensSection from "./NavilensSection";
-import iconQr from "@/assets/icon-qr.png";
-import iconNfc from "@/assets/icon-nfc.png";
+import iconQr from "@/assets/qr-code-example.png";
+import iconNfc from "@/assets/shape-outline.png";
 import qrAscires from "@/assets/qr-ascires.png";
 import nfcWipass from "@/assets/nfc-wipass.png";
 
