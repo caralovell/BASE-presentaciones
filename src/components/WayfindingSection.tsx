@@ -40,10 +40,9 @@ const WayfindingSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* Image left — 3 cards horizontal — Image right */}
       <ScrollReveal delay={0.1}>
-        <div className="grid grid-cols-[auto_1fr_auto] gap-4 lg:gap-6 items-center max-w-6xl mx-auto mb-8">
-          {/* Left image */}
+        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 lg:gap-6 items-center max-w-6xl mx-auto mb-8">
+          {/* Left image — large */}
           <motion.div
             className="flex justify-center"
             animate={{ y: [0, -8, 0] }}
@@ -52,36 +51,50 @@ const WayfindingSection = () => (
             <img
               src={wayfindingImg}
               alt="Mapa interactivo de navegación interior"
-              className="w-[180px] lg:w-[220px] h-auto object-contain drop-shadow-lg"
+              className="w-full max-w-[340px] h-auto object-contain drop-shadow-lg"
               loading="lazy"
             />
           </motion.div>
 
-          {/* 3 cards horizontal */}
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
+          {/* 3 small cards vertical + button */}
+          <div className="flex flex-col items-center gap-2.5">
             {features.map((f, i) => {
               const Icon = f.icon;
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  whileHover={{ y: -4 }}
-                  className="p-3 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors text-center"
+                  whileHover={{ y: -3 }}
+                  className="w-[160px] p-2.5 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors text-center"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-2 mx-auto">
+                  <div className="w-7 h-7 rounded-md bg-accent/10 flex items-center justify-center mb-1.5 mx-auto">
                     <Icon className="w-3.5 h-3.5 text-accent" strokeWidth={2} />
                   </div>
-                  <h4 className="text-xs font-bold text-foreground mb-0.5">{f.title}</h4>
-                  <p className="text-[10px] text-muted-foreground leading-relaxed">{f.desc}</p>
+                  <h4 className="text-[11px] font-bold text-foreground mb-0.5">{f.title}</h4>
+                  <p className="text-[9px] text-muted-foreground leading-relaxed">{f.desc}</p>
                 </motion.div>
               );
             })}
+
+            <a
+              href="https://digital.logopost.es/landing5/mapa.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2"
+            >
+              <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
+                <span className="mr-7 transition-opacity duration-500 group-hover:opacity-0">Ver mapa</span>
+                <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-8 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                  <ArrowRight size={14} strokeWidth={2} />
+                </span>
+              </button>
+            </a>
           </div>
 
-          {/* Right image */}
+          {/* Right image — large */}
           <motion.div
             className="flex justify-center"
             animate={{ y: [0, -8, 0] }}
@@ -90,24 +103,10 @@ const WayfindingSection = () => (
             <img
               src={wayfindingImg2}
               alt="Navegación digital en espacio interior"
-              className="w-[180px] lg:w-[220px] h-auto object-contain drop-shadow-lg"
+              className="w-full max-w-[340px] h-auto object-contain drop-shadow-lg"
               loading="lazy"
             />
           </motion.div>
-        </div>
-      </ScrollReveal>
-
-      {/* Button centered below */}
-      <ScrollReveal delay={0.2}>
-        <div className="flex justify-center">
-          <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
-            <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
-              <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">Ver mapa interactivo</span>
-              <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-10 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-                <ArrowRight size={16} strokeWidth={2} />
-              </span>
-            </button>
-          </a>
         </div>
       </ScrollReveal>
     </div>
