@@ -2,26 +2,17 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import logopost from "@/assets/logopost-logo.png";
+import { Monitor, Sparkles, Navigation, Wifi, Brain, Bot, Wind, Glasses, type LucideIcon } from "lucide-react";
 
-// Placeholder icons — replace with your own assets
-import iconSignage from "@/assets/icon-signage.png";
-import iconSmart from "@/assets/icon-smart.png";
-import iconWayfinding from "@/assets/icon-wayfinding.png";
-import iconIot from "@/assets/icon-iot.png";
-import iconIa from "@/assets/icon-ia.png";
-import iconRobotics from "@/assets/icon-robotics.png";
-import iconSensorial from "@/assets/icon-sensorial.png";
-import iconVr from "@/assets/icon-vr.png";
-
-const solutions = [
-  { name: "Digital Signage", img: iconSignage },
-  { name: "Smart Signage", img: iconSmart },
-  { name: "Digital Wayfinding", img: iconWayfinding },
-  { name: "IoT", img: iconIot },
-  { name: "IA", img: iconIa },
-  { name: "Robótica", img: iconRobotics },
-  { name: "Mkt Sensorial", img: iconSensorial },
-  { name: "VR / AR", img: iconVr },
+const solutions: { name: string; Icon: LucideIcon }[] = [
+  { name: "Digital Signage", Icon: Monitor },
+  { name: "Smart Signage", Icon: Sparkles },
+  { name: "Digital Wayfinding", Icon: Navigation },
+  { name: "IoT", Icon: Wifi },
+  { name: "IA", Icon: Brain },
+  { name: "Robótica", Icon: Bot },
+  { name: "Mkt Sensorial", Icon: Wind },
+  { name: "VR / AR", Icon: Glasses },
 ];
 
 const EcosystemSection = () => {
@@ -107,7 +98,7 @@ const EcosystemSection = () => {
                 whileHover={{ y: -4, scale: 1.1 }}
               >
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-card border-2 border-accent/40 shadow-xl flex items-center justify-center hover:border-accent hover:bg-accent/5 transition-colors cursor-default overflow-hidden">
-                  <img src={sol.img} alt={sol.name} className="w-8 h-8 md:w-9 md:h-9 object-contain" loading="lazy" />
+                  <sol.Icon className="w-7 h-7 md:w-8 md:h-8 text-accent" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] md:text-xs font-semibold text-foreground text-center max-w-[90px] leading-tight">
                   {sol.name}
