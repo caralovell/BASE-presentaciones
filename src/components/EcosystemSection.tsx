@@ -40,16 +40,11 @@ const EcosystemSection = () => (
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-4">
-            00
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">
-            Un ecosistema digital
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">Un ecosistema digital</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Diseñamos, integramos y gestionamos soluciones digitales para tus espacios — del diseño
-            del espacio a su digitalización completa, con la <span className="text-accent font-semibold">inteligencia artificial</span> como
-            eje central que conecta cada tecnología.
+            Diseñamos, integramos y gestionamos soluciones digitales para tus espacios — del diseño del espacio a su
+            digitalización completa, con la <span className="text-accent font-semibold">inteligencia artificial</span>{" "}
+            como eje central que conecta cada tecnología.
           </p>
         </div>
       </ScrollReveal>
