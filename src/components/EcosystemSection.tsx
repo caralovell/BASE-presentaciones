@@ -2,26 +2,17 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import logopost from "@/assets/logopost-logo.png";
+import { Monitor, Sparkles, Navigation, Wifi, Brain, Bot, Wind, Glasses, type LucideIcon } from "lucide-react";
 
-// Placeholder icons — replace with your own assets
-import iconSignage from "@/assets/icon-signage.png";
-import iconSmart from "@/assets/icon-smart.png";
-import iconWayfinding from "@/assets/icon-wayfinding.png";
-import iconIot from "@/assets/icon-iot.png";
-import iconIa from "@/assets/icon-ia.png";
-import iconRobotics from "@/assets/icon-robotics.png";
-import iconSensorial from "@/assets/icon-sensorial.png";
-import iconVr from "@/assets/icon-vr.png";
-
-const solutions = [
-  { name: "Digital Signage", img: iconSignage },
-  { name: "Smart Signage", img: iconSmart },
-  { name: "Digital Wayfinding", img: iconWayfinding },
-  { name: "IoT", img: iconIot },
-  { name: "IA", img: iconIa },
-  { name: "Robótica", img: iconRobotics },
-  { name: "Mkt Sensorial", img: iconSensorial },
-  { name: "VR / AR", img: iconVr },
+const solutions: { name: string; Icon: LucideIcon }[] = [
+  { name: "Digital Signage", Icon: Monitor },
+  { name: "Smart Signage", Icon: Sparkles },
+  { name: "Digital Wayfinding", Icon: Navigation },
+  { name: "IoT", Icon: Wifi },
+  { name: "IA", Icon: Brain },
+  { name: "Robótica", Icon: Bot },
+  { name: "Mkt Sensorial", Icon: Wind },
+  { name: "VR / AR", Icon: Glasses },
 ];
 
 const EcosystemSection = () => {
