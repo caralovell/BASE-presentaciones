@@ -23,30 +23,32 @@ const blocks = [
 ];
 
 const AiAgentSection = () => (
-  <section id="inteligencia-artificial" className="py-8 md:py-10 bg-background relative overflow-hidden">
+  <section id="inteligencia-artificial" className="py-12 md:py-14 bg-background relative overflow-hidden">
     <div className="container mx-auto px-4 relative z-10">
       <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-6">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-2">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-3">
             06
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">Inteligencia Artificial</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">Inteligencia Artificial</h2>
         </div>
       </ScrollReveal>
 
-      <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
         {blocks.map((b, i) => (
           <ScrollReveal key={b.title} delay={i * 0.1}>
-            <div className="group relative rounded-xl overflow-hidden border border-border hover:border-accent/50 bg-card shadow-md h-full flex items-center gap-3 p-3 transition-colors duration-300">
-              <img
-                src={b.img}
-                alt={b.title}
-                className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
-                loading="lazy"
-              />
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-foreground mb-1">{b.title}</h3>
-                <p className="text-xs text-muted-foreground leading-snug">{b.desc}</p>
+            <div className="group relative rounded-xl overflow-hidden border border-border hover:border-accent/50 bg-card shadow-md h-full flex flex-col transition-colors duration-300">
+              <div className="relative overflow-hidden aspect-[16/10]">
+                <img
+                  src={b.img}
+                  alt={b.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex-1 flex flex-col">
+                <h3 className="text-base font-bold text-foreground mb-1.5">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             </div>
           </ScrollReveal>
