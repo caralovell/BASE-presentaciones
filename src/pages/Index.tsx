@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import EcosystemSection from "@/components/EcosystemSection";
 import DigitalSignageSection from "@/components/DigitalSignageSection";
 import SmartSignageSection from "@/components/SmartSignageSection";
 import WayfindingSection from "@/components/WayfindingSection";
@@ -14,13 +13,12 @@ const Index = () => (
   <div className="min-h-screen">
     <HeroSection />
     <SectionDivider />
-    <EcosystemSection />
     <SectionDivider />
     <DigitalSignageSection />
     <SectionDivider />
-      <SmartSignageSection />
-      <SectionDivider />
-      <WayfindingSection />
+    <SmartSignageSection />
+    <SectionDivider />
+    <WayfindingSection />
     <SectionDivider />
     <IoTSection />
     <SectionDivider />
