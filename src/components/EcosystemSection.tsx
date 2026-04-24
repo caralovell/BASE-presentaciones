@@ -67,9 +67,9 @@ const EcosystemSection = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col items-center justify-center">
           {/* Title + description — always visible */}
-          <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="text-center max-w-3xl mx-auto mb-4">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">Un ecosistema digital</h2>
             <p
               className="text-base md:text-lg text-muted-foreground leading-relaxed transition-opacity duration-500"
@@ -82,7 +82,7 @@ const EcosystemSection = () => {
           </div>
 
           {/* Orbital diagram */}
-          <div className="relative max-w-[500px] md:max-w-[600px] mx-auto aspect-square">
+          <div className="relative w-[min(80vw,500px)] mx-auto aspect-square">
             {/* Orbit ring */}
             <div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] rounded-full border border-dashed border-accent/20 transition-opacity duration-500"
