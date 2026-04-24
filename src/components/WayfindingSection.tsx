@@ -5,9 +5,9 @@ import wayfindingImg from "@/assets/wayfinding.png";
 import wayfindingImg2 from "@/assets/wayfinding-2.png";
 
 const features = [
-  { icon: MapPinned, title: "Mapa estático", desc: "Planos fijos digitalizados con puntos de interés señalizados." },
-  { icon: Map, title: "Mapa dinámico", desc: "Rutas en tiempo real que se adaptan al recorrido del usuario." },
-  { icon: Brain, title: "Mapa con IA", desc: "Navegación predictiva que aprende del comportamiento del visitante." },
+  { icon: MapPinned, title: "Mapa estático", desc: "Planos fijos digitalizados." },
+  { icon: Map, title: "Mapa dinámico", desc: "Rutas en tiempo real." },
+  { icon: Brain, title: "Mapa con IA", desc: "Navegación predictiva." },
 ];
 
 const WayfindingSection = () => (
@@ -40,35 +40,9 @@ const WayfindingSection = () => (
         </div>
       </ScrollReveal>
 
-      {/* 3 feature cards horizontal */}
+      {/* Image left — 3 cards horizontal — Image right */}
       <ScrollReveal delay={0.1}>
-        <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto mb-8">
-          {features.map((f, i) => {
-            const Icon = f.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="p-4 rounded-2xl bg-card border border-border hover:border-accent/50 transition-colors text-center"
-              >
-                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-3 mx-auto">
-                  <Icon className="w-4 h-4 text-accent" strokeWidth={2} />
-                </div>
-                <h4 className="text-sm font-bold text-foreground mb-1">{f.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </ScrollReveal>
-
-      {/* Images + button row */}
-      <ScrollReveal delay={0.15}>
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-6 lg:gap-10 items-center max-w-5xl mx-auto">
+        <div className="grid grid-cols-[auto_1fr_auto] gap-4 lg:gap-6 items-center max-w-6xl mx-auto mb-8">
           {/* Left image */}
           <motion.div
             className="flex justify-center"
@@ -78,21 +52,33 @@ const WayfindingSection = () => (
             <img
               src={wayfindingImg}
               alt="Mapa interactivo de navegación interior"
-              className="w-full max-w-[280px] h-auto object-contain drop-shadow-lg"
+              className="w-[180px] lg:w-[220px] h-auto object-contain drop-shadow-lg"
               loading="lazy"
             />
           </motion.div>
 
-          {/* Center button */}
-          <div className="flex justify-center">
-            <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
-              <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
-                <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">Ver mapa interactivo</span>
-                <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-10 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
-                  <ArrowRight size={16} strokeWidth={2} />
-                </span>
-              </button>
-            </a>
+          {/* 3 cards horizontal */}
+          <div className="grid grid-cols-3 gap-2 md:gap-3">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  whileHover={{ y: -4 }}
+                  className="p-3 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors text-center"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-2 mx-auto">
+                    <Icon className="w-3.5 h-3.5 text-accent" strokeWidth={2} />
+                  </div>
+                  <h4 className="text-xs font-bold text-foreground mb-0.5">{f.title}</h4>
+                  <p className="text-[10px] text-muted-foreground leading-relaxed">{f.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Right image */}
@@ -104,10 +90,24 @@ const WayfindingSection = () => (
             <img
               src={wayfindingImg2}
               alt="Navegación digital en espacio interior"
-              className="w-full max-w-[280px] h-auto object-contain drop-shadow-lg"
+              className="w-[180px] lg:w-[220px] h-auto object-contain drop-shadow-lg"
               loading="lazy"
             />
           </motion.div>
+        </div>
+      </ScrollReveal>
+
+      {/* Button centered below */}
+      <ScrollReveal delay={0.2}>
+        <div className="flex justify-center">
+          <a href="https://digital.logopost.es/landing5/mapa.html" target="_blank" rel="noopener noreferrer">
+            <button className="group relative bg-gradient-to-r from-accent to-accent/70 text-accent-foreground px-8 py-4 rounded-full font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--accent)/0.3)] hover:scale-[1.03] flex items-center overflow-hidden">
+              <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">Ver mapa interactivo</span>
+              <span className="absolute right-1 top-1 bottom-1 rounded-full z-10 grid w-10 place-items-center transition-all duration-500 bg-accent-foreground/20 group-hover:w-[calc(100%-0.5rem)] group-active:scale-95">
+                <ArrowRight size={16} strokeWidth={2} />
+              </span>
+            </button>
+          </a>
         </div>
       </ScrollReveal>
     </div>
