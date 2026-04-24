@@ -53,9 +53,7 @@ const SmartSignageSection = () => (
             <div className="relative grid grid-cols-[1fr_auto] gap-5 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <img src={iconQr} alt="QR" className="w-8 h-8 object-contain" />
-                  </div>
+                  <img src={iconQr} alt="QR" className="h-10 object-contain" />
                   <div>
                     <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Acceso rápido</span>
                     <h3 className="text-2xl font-bold text-foreground">Códigos QR</h3>
@@ -120,9 +118,7 @@ const SmartSignageSection = () => (
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <img src={iconNfc} alt="NFC" className="w-8 h-8 object-contain" />
-                </div>
+                <img src={iconNfc} alt="NFC" className="h-10 object-contain" />
                 <div>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
                     Sin apps · Sin cámara
