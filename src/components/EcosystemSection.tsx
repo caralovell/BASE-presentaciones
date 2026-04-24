@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Monitor, Sparkles, Navigation, Wifi, Brain, Bot, Wind, Glasses, type LucideIcon } from "lucide-react";
-import ScrollReveal from "./ScrollReveal";
 import logopost from "@/assets/logopost-logo.png";
 
 const solutions: { name: string; Icon: LucideIcon }[] = [
@@ -34,9 +33,7 @@ const EcosystemSection = () => {
       const raw = scrolled / scrollableDistance;
       const clamped = Math.max(0, Math.min(raw, 1));
 
-      // Items expand from 0% to 100% in first 60% of scroll
       setExpandProgress(Math.min(clamped / 0.6, 1));
-      // Text fades in from 50% to 80% of scroll
       setTextProgress(Math.max(0, Math.min((clamped - 0.5) / 0.3, 1)));
     };
 
@@ -45,21 +42,15 @@ const EcosystemSection = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const maxRadius = 42.5;
-  const currentRadius = expandProgress * maxRadius;
-
-  // Eased progress for smoother feel
   const eased =
     expandProgress < 0.5 ? 2 * expandProgress * expandProgress : 1 - Math.pow(-2 * expandProgress + 2, 2) / 2;
 
+  const maxRadius = 42.5;
   const easedRadius = eased * maxRadius;
 
   return (
     <div ref={wrapperRef} className="relative" style={{ height: "200vh" }}>
-      <section
-        id="ecosistema"
-        className="sticky top-0 h-screen bg-background relative overflow-hidden flex items-center"
-      >
+      <div id="ecosistema" className="sticky top-0 h-screen bg-background relative overflow-hidden">
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full opacity-[0.06]"
           style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
@@ -67,22 +58,23 @@ const EcosystemSection = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="container mx-auto px-4 relative z-10 h-full flex flex-col items-center justify-center">
-          {/* Title + description — always visible */}
-          <div className="text-center max-w-3xl mx-auto mb-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">Un ecosistema digital</h2>
+        {/* Full-screen centered layout */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          {/* Title + description */}
+          <div className="text-center max-w-3xl mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-4">Un ecosistema digital</h2>
             <p
               className="text-base md:text-lg text-muted-foreground leading-relaxed transition-opacity duration-500"
               style={{ opacity: 0.4 + textProgress * 0.6 }}
             >
-              Diseñamos, integramos y gestionamos soluciones digitales para tus espacios del diseño del espacio a su
+              Diseñamos, integramos y gestionamos soluciones digitales para tus espacios — del diseño del espacio a su
               digitalización completa, con la <span className="text-accent font-semibold">inteligencia artificial</span>{" "}
               como eje central que conecta cada tecnología.
             </p>
           </div>
 
           {/* Orbital diagram */}
-          <div className="relative w-[min(80vw,500px)] mx-auto aspect-square">
+          <div className="relative w-[min(70vh,500px)] aspect-square">
             {/* Orbit ring */}
             <div
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] rounded-full border border-dashed border-accent/20 transition-opacity duration-500"
@@ -105,7 +97,6 @@ const EcosystemSection = () => {
               const x = 50 + easedRadius * Math.cos(rad);
               const y = 50 + easedRadius * Math.sin(rad);
 
-              // Stagger: each item starts expanding slightly later
               const stagger = i * 0.03;
               const itemProgress = Math.max(0, Math.min((expandProgress - stagger) / (1 - stagger), 1));
 
@@ -132,7 +123,7 @@ const EcosystemSection = () => {
             })}
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
