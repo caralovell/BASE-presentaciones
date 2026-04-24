@@ -1,4 +1,6 @@
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
+import { useEffect, useRef } from "react";
 import aiAgent from "@/assets/ai-agent.jpg";
 import aiAvatar from "@/assets/ai-avatar.jpg";
 import aiAdaptive from "@/assets/ai-adaptive.jpg";
@@ -21,63 +23,86 @@ const blocks = [
   },
 ];
 
-// Duplicate for seamless loop
-const duplicatedBlocks = [...blocks, ...blocks];
+const AiAgentSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const smoothX = useSpring(mouseX, { stiffness: 30, damping: 20 });
+  const smoothY = useSpring(mouseY, { stiffness: 30, damping: 20 });
 
-const AiAgentSection = () => (
-  <section id="inteligencia-artificial" className="py-12 md:py-14 bg-background relative overflow-hidden">
-    <style>{`
-      @keyframes slide-left {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .ai-scroll-track {
-        animation: slide-left 30s linear infinite;
-      }
-      .ai-scroll-track:hover {
-        animation-play-state: paused;
-      }
-      .ai-scroll-container {
-        mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-        -webkit-mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-      }
-    `}</style>
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-    <div className="container mx-auto px-4 relative z-10">
-      <ScrollReveal>
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-3">
-            06
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">Inteligencia Artificial</h2>
-        </div>
-      </ScrollReveal>
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+      mouseX.set(x * 15);
+      mouseY.set(y * 10);
+    };
 
-      <div className="ai-scroll-container w-full max-w-5xl mx-auto overflow-hidden">
-        <div className="ai-scroll-track flex gap-5 w-max">
-          {duplicatedBlocks.map((b, i) => (
-            <div
-              key={`${b.title}-${i}`}
-              className="group relative flex-shrink-0 w-[260px] md:w-[300px] rounded-xl overflow-hidden border border-border hover:border-accent/50 bg-card shadow-md flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
-            >
-              <div className="relative overflow-hidden aspect-[16/10]">
-                <img
-                  src={b.img}
-                  alt={b.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-4 flex-1 flex flex-col">
-                <h3 className="text-base font-bold text-foreground mb-1.5">{b.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-              </div>
-            </div>
-          ))}
+    container.addEventListener("mousemove", handleMouseMove);
+    return () => container.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  return (
+    <section id="inteligencia-artificial" className="py-12 md:py-14 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <span className="inline-block text-xs uppercase tracking-[0.3em] text-accent font-primary font-bold mb-3">
+              06
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">Inteligencia Artificial</h2>
+          </div>
+        </ScrollReveal>
+
+        <div ref={containerRef} className="relative max-w-4xl mx-auto">
+          <div className="flex justify-center items-end gap-5 md:gap-8 py-8">
+            {blocks.map((b, i) => {
+              const arcOffsets = [-10, -26, -10];
+              const rotations = [-5, 0, 5];
+              const floatDelay = i * 0.8;
+
+              return (
+                <ScrollReveal key={b.title} delay={i * 0.1}>
+                  <motion.div
+                    className="group relative cursor-pointer"
+                    style={{ x: smoothX, y: smoothY }}
+                    animate={{
+                      y: [arcOffsets[i], arcOffsets[i] - 8, arcOffsets[i]],
+                      rotate: rotations[i],
+                    }}
+                    transition={{
+                      y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: floatDelay },
+                      rotate: { duration: 0.5 },
+                    }}
+                    whileHover={{ scale: 1.06, y: arcOffsets[i] - 14, rotate: 0 }}
+                  >
+                    <div className="relative w-[200px] md:w-[240px] rounded-2xl overflow-hidden shadow-xl border border-border hover:border-accent/50 bg-card transition-colors duration-300">
+                      <div className="relative overflow-hidden aspect-[16/10]">
+                        <img
+                          src={b.img}
+                          alt={b.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-3">
+                        <h3 className="text-sm font-bold text-foreground mb-1">{b.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default AiAgentSection;
