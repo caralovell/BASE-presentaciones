@@ -110,16 +110,16 @@ const DigitalSignageSection = () => (
               aeropuertos o centros comerciales
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-4 items-center">
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px]"
+              className="w-full max-w-[220px]"
             >
               <img
                 src={cmsDashboard}
                 alt="Panel de gestión de contenido"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain"
                 loading="lazy"
                 width={1024}
                 height={768}
@@ -128,12 +128,12 @@ const DigitalSignageSection = () => (
             <motion.div
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full max-w-[220px]"
+              className="w-full max-w-[140px]"
             >
               <img
                 src={player}
-                alt="Panel de gestión de contenido"
-                className="w-full h-auto object-cover"
+                alt="Android media player"
+                className="w-full h-auto object-contain"
                 loading="lazy"
                 width={1024}
                 height={768}
