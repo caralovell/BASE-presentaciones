@@ -98,7 +98,7 @@ const EcosystemSection = () => {
                 whileHover={{ y: -4, scale: 1.1 }}
               >
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-card border-2 border-accent/40 shadow-xl flex items-center justify-center hover:border-accent hover:bg-accent/5 transition-colors cursor-default overflow-hidden">
-                  <img src={sol.img} alt={sol.name} className="w-8 h-8 md:w-9 md:h-9 object-contain" loading="lazy" />
+                  <sol.Icon className="w-7 h-7 md:w-8 md:h-8 text-accent" strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] md:text-xs font-semibold text-foreground text-center max-w-[90px] leading-tight">
                   {sol.name}
