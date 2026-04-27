@@ -19,10 +19,7 @@ const BudgetSection = () => (
     <div className="container mx-auto px-4 relative z-10 text-center">
       <ScrollReveal>
         <h2 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4 leading-tight">
-          ¿Listo para transformar
-          <br />
-          tu [sector/edificio]?
-        </h2>
+          ¿Quieres digitalizar tu espacio?
         <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto mb-10">
           Solicita tu presupuesto personalizado y descubre cómo la tecnología puede mejorar la experiencia.
         </p>
