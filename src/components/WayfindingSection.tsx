@@ -9,14 +9,6 @@ const bubbles = ["Mapa estático", "Mapa dinámico", "Mapa con IA"];
 const WayfindingSection = () => (
   <section id="wayfinding" className="py-16 md:py-24 bg-background relative overflow-hidden">
     <div
-      className="absolute inset-0 opacity-[0.04]"
-      style={{
-        backgroundImage:
-          "linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)",
-        backgroundSize: "60px 60px",
-      }}
-    />
-    <div
       className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full opacity-[0.08]"
       style={{ background: "radial-gradient(circle, hsl(var(--accent)), transparent 60%)" }}
     />
