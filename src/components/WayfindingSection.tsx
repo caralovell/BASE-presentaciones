@@ -85,7 +85,7 @@ const WayfindingSection = () => (
               Explora una demo interactiva del mapa de navegación digital.
             </p>
             <a
-              href="https://map-viewer.situm.com/hardrock_riviera_maya?wl=true&lng=en"
+              href="https://maps.situm.com/Situm?wl=true&lng=es&building_id=19027&floor_id=64456"
               target="_blank"
               rel="noopener noreferrer"
             >
