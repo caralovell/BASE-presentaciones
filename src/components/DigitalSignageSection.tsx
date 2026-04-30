@@ -17,6 +17,7 @@ const totemSecondary = [
 ];
 
 const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
+const epaperBubbles = ["Etiquetas de precio", "Promociones", "Directorios", "Información de producto"];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
