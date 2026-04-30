@@ -82,7 +82,7 @@ const WayfindingSection = () => (
           {/* Right: explanatory text + button */}
           <div className="flex flex-col items-center md:items-start gap-3 max-w-xs text-center md:text-left">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Explora una demo interactiva del mapa de navegación digital para espacios comerciales.
+              Explora una demo interactiva del mapa de navegación digital.
             </p>
             <a
               href="https://map-viewer.situm.com/hardrock_riviera_maya?wl=true&lng=en"
