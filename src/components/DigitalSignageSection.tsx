@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import cmsDashboard from "@/assets/dashboard-mockup.png";
 import player from "@/assets/android-media-player.jpg";
+import epaperDisplay from "@/assets/totem-main.jpg";
 import totemMain from "@/assets/totem-main.jpg";
 import totem1 from "@/assets/totem-1.jpg";
 import totem2 from "@/assets/totem-2.jpg";
@@ -16,6 +17,7 @@ const totemSecondary = [
 ];
 
 const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
+const epaperBubbles = ["Etiquetas de precio", "Promociones", "Directorios", "Información de producto"];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
