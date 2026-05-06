@@ -17,7 +17,7 @@ const totemSecondary = [
 ];
 
 const bubbles = ["Tótems interactivos", "Kioskos táctiles", "Gestión de colas", "Soluciones LED"];
-const epaperBubbles = ["Etiquetas de precio", "Promociones", "Directorios", "Información de producto"];
+const epaperBubbles = ["Información", "Contenido", "Comunicación"];
 
 const DigitalSignageSection = () => (
   <section id="digital-signage" className="py-12 md:py-16 bg-background">
@@ -108,9 +108,7 @@ const DigitalSignageSection = () => (
           <div>
             <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">E-Paper</h3>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Pantallas de papel electrónico para tiendas: ideales para etiquetas de precio, promociones por categoría,
-              directorios de tienda, información de producto y comunicación comercial, con bajo consumo y máxima
-              visibilidad.
+             Pantallas de tinta electrónica: una solución eficiente y versátil para mostrar información, señalización y comunicación visual, con bajo consumo energético y alta visibilidad.
             </p>
             <div className="flex flex-wrap gap-2.5 mt-4">
               {epaperBubbles.map((label, i) => (
