@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import LogopostLogo from "./LogopostLogo";
-import navilensLogo from "@/assets/navilens-logo.png";
+import generico from "@/assets/generico.png";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 16 },
@@ -30,11 +30,7 @@ const HeroSection = () => (
     <div className="relative z-10 flex flex-col items-center gap-8 max-w-3xl w-full">
       {/* 1. Client logo */}
       <motion.div {...fadeUp(0.1)}>
-        <img
-    src="/assets/navilens-logo.png"
-    alt="Navilens logo"
-    className="h-20 md:h-24 w-auto object-contain"
-  />
+     <img src={generico} alt="Generico" className="h-20 md:h-24 w-auto" />
       </motion.div>
 
       {/* 2. Label */}
