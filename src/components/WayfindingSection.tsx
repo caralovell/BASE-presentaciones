@@ -21,9 +21,7 @@ const WayfindingSection = () => (
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Digital Wayfinding</h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Navegación inteligente en interiores que guía al cliente por la tienda con rutas en tiempo real,
-            localización de secciones, productos, probadores, cajas y puntos de recogida, y orientación paso a paso
-            entre plantas y zonas comerciales.
+            Navegación inteligente en interiores que facilita la orientación y el acceso a diferentes espacios mediante rutas dinámicas, localización en tiempo real y guía paso a paso en entornos complejos.
           </p>
         </div>
       </ScrollReveal>
